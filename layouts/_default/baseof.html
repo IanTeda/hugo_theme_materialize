@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+
+  <!-- Default Page Head -->
+  {{ partial "head.html" . }}
+
+  <body>
+    <!-- Code that all your templates share, like a header -->
+    {{ block "body" . }}
+      <!-- The part of the page that begins to differ between templates -->
+    {{ end }}
+
+    <!-- Default Footer -->
+    {{ partial "footer.html"}}
+  </body>
+
+  <!-- Load themes Javascript file -->
+  <script src='{{ .Site.BaseURL }}scripts/{{ index .Site.Data.hash "ianteda2017.min.js" }}'></script>  
+
+  </html>
