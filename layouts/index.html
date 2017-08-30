@@ -3,94 +3,229 @@
 
 {{ partial "navbar.html" . }}
 
-
-  <div class="section no-pad-bot" id="index-banner">
-    <div class="container">
-      <br><br>
-      <h1 class="header center orange-text">Starter Template</h1>
-      <div class="row center">
-        <h5 class="header col s12 light">A modern responsive front-end framework based on Material Design</h5>
-      </div>
-      <div class="row center">
-        <a href="http://materializecss.com/getting-started.html" id="download-button" class="btn-large waves-effect waves-light orange">Get Started</a>
-      </div>
-      <br><br>
-
+<div class="section fullscreen-bg" id="index-banner" style="background-image: url('{{ .Site.BaseURL }}images/{{ index .Site.Data.hash "cover-intake-profile@highres.jpg" }} ')">
+  <div class="container text-vcenter">
+    <h1 class="header center white-text uppercase">{{ .Site.Title }}</h1>
+    <div class="row center">
+      <h5 class="header col s12 light italic white-text">A modern responsive front-end framework based on Material Design</h5>
     </div>
   </div>
+</div>
+
+<div class="container">
+  <div class="section">
+    <img sizes="(min-width: 36em) 576w, 768w, 992w, 1200w" srcset="
+            {{ .Site.BaseURL }}images/{{ index .Site.Data.hash "head-shot@mobile.png" }} 576w,
+            {{ .Site.BaseURL }}images/{{ index .Site.Data.hash "head-shot@tablet.png" }} 768w,
+            {{ .Site.BaseURL }}images/{{ index .Site.Data.hash "head-shot@desktop.png" }} 992w,
+            {{ .Site.BaseURL }}images/{{ index .Site.Data.hash "head-shot@highres.png" }} 1200w" alt="Ian Teda head shot">
+  </div>
+</div>
+
+<div class="container">
+  <div class="section">
+    <!-- All about Ian Teda, the elevator pitch -->
+    <h1 id="it-about">About</h1>
+    <p class="flow-text">
+      <em>Hi, I am Ian Teda and this my story so far</em>
+    </p>
+
+    <p class="flow-text">I have always enjoyed a good adventure, and cannot help but wonder what is around the next bend. The most rewarding adventure
+      for me at the moment is raising my two young boys – Austin and Dillan, that I share with my beautiful wife Laura.</p>
+
+    <p class="flow-text">I have been fortunate to work as a Civil Engineer on some amazing infrastructure projects within NSW and ACT Australia.
+      Some highlights, that I am proud to say I worked on include: balanced cantilever segmental bridges; dry well intake
+      tower and new RCC dam; bulk earthworks on Pacific Highway upgrade; the manufacture of pre-tensioned bridge elements
+      such as pile caps, Super T beams, planks and Reinforced Concrete Box Culverts; the Sydney Light Rail design. My hard
+      work and determination has come with the satisfaction of seeing large infrastructure projects being born, projects
+      that I am proud to tell my boys I have worked on.</p>
+
+    <p class="flow-text">To find out more about my work, checkout my <a href="https://www.linkedin.com/in/ianteda/">LinkedIn Profile</a></p>
+
+    <p class="flow-text">To find out what I am up to right now, checkout my <a href="now.html">now page</a>.</p>
+  </div>
+</div>
+
+<div class="container">
+  <div class="section">
+    <!-- What do I value, my principles. Why should you buy from me -->
+    <h1 id="it-code">Code</h3>
+
+    <p class="flow-text">
+      <em>What I am trying to live by</em>
+    </p>
+
+    <blockquote>
+      <p class="flow-text">I choose to be authentic through honesty, integrity and transparency. With a spirit for creativity, imagination and
+        adventure. Seeking personal growth by being curious, learning and reflecting. Looking for freedom through the discipline
+        of habit. But most of all I am trying to be useful by adding value in what I do.
+        <cite>– Ian Teda</cite>
+      </p>
+    </blockquote>
+  </div>
+</div>
 
 
-  <div class="container">
+<div class="container">
+  <div class="section">
+
+    <!--   Icon Section   -->
+    <div class="row">
+      <div class="col s12 m6">
+        <div class="icon-block">
+          <h2 class="center light-blue-text"><a href="#1"><i class="material-icons">schedule</i></a></h2>
+          <h5 class="center">Project Management</h5>
+
+          <p class="light">Cost Management, Scheduling, Estimating, Community, &amp; Contract Management</p>
+        </div>
+      </div>
+
+      <div class="col s12 m6">
+        <div class="icon-block">
+          <h2 class="center light-blue-text"><a href="#1"><i class="material-icons">directions_railway</i></a></h2>
+          <h5 class="center">Engineering</h5>
+
+          <p class="light">Bridges, Drainage, Dams, Water, Precast, Bulk Earthworks, Drill &amp; Blast, Diaphragm Wall Tunnels, Structures
+            &amp; Light Rail, <a href="/engineering/rule-book.html">Engineering Rule Book</a>.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col s12 m6">
+        <div class="icon-block">
+          <h2 class="center light-blue-text"><a href="#1"><i class="material-icons">computer</i></a></h2>
+          <h5 class="center">Software Development</h5>
+
+          <p class="light">Web Design, Javascript, Java (Andriod), SQL &amp; MongoDB</p>
+        </div>
+      </div>
+
+      <div class="col s12 m6">
+        <div class="icon-block">
+          <h2 class="center light-blue-text"><a href="#1"><i class="material-icons">blur_on</i></a></h2>
+          <h5 class="center">Creativity</h5>
+
+          <p class="light">Videography, Photography, Maker (Arduino, Raspberry Pi) &amp; Music</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <br><br>
+</div>
+
+<!-- Featured products. Time to sell something -->
+<div class="container">
+  <div class="section">
+    <h1 id="it-featured">Featured Posts</h1>
+
+    <div class="row">
+      <div class="col s12 m6">
+        <div class="card">
+          <div class="card-image waves-effect waves-block waves-light">
+              <img sizes="(min-width: 36em) 576w, 768w, 992w, 1200w" srcset="
+              {{ .Site.BaseURL }}images/{{ index .Site.Data.hash "cover-intake-profile@highres.jpg" }} 576w,
+              {{ .Site.BaseURL }}images/{{ index .Site.Data.hash "cover-intake-profile@highres.jpg" }} 768w,
+              {{ .Site.BaseURL }}images/{{ index .Site.Data.hash "cover-intake-profile@highres.jpg" }} 992w,
+              {{ .Site.BaseURL }}images/{{ index .Site.Data.hash "cover-intake-profile@highres.jpg" }} 1200w" alt="Ian Teda head shot">
+          </div>
+          <div class="card-content">
+            <span class="card-title activator grey-text text-darken-4">Card Title<i class="material-icons right">more_vert</i></span>
+            <p><a href="#">This is a link</a></p>
+          </div>
+          <div class="card-reveal">
+            <span class="card-title grey-text text-darken-4">Card Title<i class="material-icons right">close</i></span>
+            <p>Here is some more information about this product that is only revealed once clicked on.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col s12 m6">
+          <div class="card">
+            <div class="card-image waves-effect waves-block waves-light">
+                <img sizes="(min-width: 36em) 576w, 768w, 992w, 1200w" srcset="
+                {{ .Site.BaseURL }}images/{{ index .Site.Data.hash "cover-intake-profile@highres.jpg" }} 576w,
+                {{ .Site.BaseURL }}images/{{ index .Site.Data.hash "cover-intake-profile@highres.jpg" }} 768w,
+                {{ .Site.BaseURL }}images/{{ index .Site.Data.hash "cover-intake-profile@highres.jpg" }} 992w,
+                {{ .Site.BaseURL }}images/{{ index .Site.Data.hash "cover-intake-profile@highres.jpg" }} 1200w" alt="Ian Teda head shot">
+            </div>
+            <div class="card-content">
+              <span class="card-title activator grey-text text-darken-4">Card Title<i class="material-icons right">more_vert</i></span>
+              <p><a href="#">This is a link</a></p>
+            </div>
+            <div class="card-reveal">
+              <span class="card-title grey-text text-darken-4">Card Title<i class="material-icons right">close</i></span>
+              <p>Here is some more information about this product that is only revealed once clicked on.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<div class="container">
     <div class="section">
+        <h1 id="it-featured">Email List</h1>
 
-      <!--   Icon Section   -->
-      <div class="row">
-        <div class="col s12 m4">
-          <div class="icon-block">
-            <h2 class="center light-blue-text"><i class="material-icons">flash_on</i></h2>
-            <h5 class="center">Speeds up development</h5>
-
-            <p class="light">We did most of the heavy lifting for you to provide a default stylings that incorporate our custom components. Additionally, we refined animations and transitions to provide a smoother experience for developers.</p>
+        <div class="row">
+            <form class="col s12">
+              <div class="row">
+                <div class="input-field col s5">
+                  <i class="material-icons prefix">person</i>
+                  <input id="icon_prefix" type="text" class="validate">
+                  <label for="icon_prefix">Name</label>
+                </div>
+                <div class="input-field col s5">
+                  <i class="material-icons prefix">email</i>
+                  <input id="icon_telephone" type="email" class="validate">
+                  <label for="icon_telephone">Email</label>
+                </div>
+                <a class="waves-effect waves-light btn col s2"><i class="material-icons left">send</i>send</a>                
+              </div>
+            </form>
           </div>
-        </div>
-
-        <div class="col s12 m4">
-          <div class="icon-block">
-            <h2 class="center light-blue-text"><i class="material-icons">group</i></h2>
-            <h5 class="center">User Experience Focused</h5>
-
-            <p class="light">By utilizing elements and principles of Material Design, we were able to create a framework that incorporates components and animations that provide more feedback to users. Additionally, a single underlying responsive system across all platforms allow for a more unified user experience.</p>
-          </div>
-        </div>
-
-        <div class="col s12 m4">
-          <div class="icon-block">
-            <h2 class="center light-blue-text"><i class="material-icons">settings</i></h2>
-            <h5 class="center">Easy to work with</h5>
-
-            <p class="light">We have provided detailed documentation as well as specific code examples to help new users get started. We are also always open to feedback and can answer any questions a user may have about Materialize.</p>
-          </div>
-        </div>
-      </div>
 
     </div>
-    <br><br>
+</div>
+
+<footer class="page-footer">
+  <div class="container">
+    <div class="row">
+      <div class="col l6 s12">
+        <h5 class="white-text">Company Bio</h5>
+        <p class="grey-text text-lighten-4">We are a team of college students working on this project like it's our full time job. Any amount would help support
+          and continue development on this project and is greatly appreciated.</p>
+
+
+      </div>
+      <div class="col l3 s12">
+        <h5 class="white-text">Settings</h5>
+        <ul>
+          <li><a class="white-text" href="#!">Link 1</a></li>
+          <li><a class="white-text" href="#!">Link 2</a></li>
+          <li><a class="white-text" href="#!">Link 3</a></li>
+          <li><a class="white-text" href="#!">Link 4</a></li>
+        </ul>
+      </div>
+      <div class="col l3 s12">
+        <h5 class="white-text">Connect</h5>
+        <ul>
+          <li><a class="white-text" href="#!">Link 1</a></li>
+          <li><a class="white-text" href="#!">Link 2</a></li>
+          <li><a class="white-text" href="#!">Link 3</a></li>
+          <li><a class="white-text" href="#!">Link 4</a></li>
+        </ul>
+      </div>
+    </div>
   </div>
-
-  <footer class="page-footer orange">
+  <div class="footer-copyright">
     <div class="container">
-      <div class="row">
-        <div class="col l6 s12">
-          <h5 class="white-text">Company Bio</h5>
-          <p class="grey-text text-lighten-4">We are a team of college students working on this project like it's our full time job. Any amount would help support and continue development on this project and is greatly appreciated.</p>
-
-
-        </div>
-        <div class="col l3 s12">
-          <h5 class="white-text">Settings</h5>
-          <ul>
-            <li><a class="white-text" href="#!">Link 1</a></li>
-            <li><a class="white-text" href="#!">Link 2</a></li>
-            <li><a class="white-text" href="#!">Link 3</a></li>
-            <li><a class="white-text" href="#!">Link 4</a></li>
-          </ul>
-        </div>
-        <div class="col l3 s12">
-          <h5 class="white-text">Connect</h5>
-          <ul>
-            <li><a class="white-text" href="#!">Link 1</a></li>
-            <li><a class="white-text" href="#!">Link 2</a></li>
-            <li><a class="white-text" href="#!">Link 3</a></li>
-            <li><a class="white-text" href="#!">Link 4</a></li>
-          </ul>
-        </div>
-      </div>
-    </div>
-    <div class="footer-copyright">
-      <div class="container">
       Made by <a class="orange-text text-lighten-3" href="http://materializecss.com">Materialize</a>
-      </div>
     </div>
-  </footer>
+  </div>
+</footer>
 
-  {{ end }}
+{{ end }}

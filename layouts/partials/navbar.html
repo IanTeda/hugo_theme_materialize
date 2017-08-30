@@ -1,16 +1,22 @@
-<!-- Dropdown Structure -->
-<ul id="dropdown1" class="dropdown-content">
-  <li><a href="#!">one</a></li>
-  <li><a href="#!">two</a></li>
-  <li class="divider"></li>
-  <li><a href="#!">three</a></li>
+<!-- Dropdown Blog Menu Structure -->
+<ul id="blog-dropdown" class="dropdown-content">
+  <li><a href="/blog/creative">Creative</a></li>
+  <li><a href="/blog/engineering">Engineering</a></li>
+  <li><a href="/blog/management">Management</a></li>
+  <li><a href="/blog/programming">Progrmming</a></li>
 </ul>
+
+<!-- Navbar -->
 <nav class="" role="navigation">
-  <div class="nav-wrapper container"><a id="logo-container" href="#" class="brand-logo">Ian Teda</a>
+  <div class="nav-wrapper container"><a id="logo-container" href="{{ .Site.BaseURL }}" class="brand-logo">{{ .Site.Title }}</a>
     <ul class="right hide-on-med-and-down">
-      <li><a href="#">Navbar Link</a></li>
-      <!-- Dropdown Trigger -->
-      <li><a class="dropdown-button" href="#!" data-activates="dropdown1">Dropdown<i class="material-icons right">arrow_drop_down</i></a></li>
+      <li><a href="#story">Story</a></li>
+      <li><a href="#code">Code</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#latest">Latest</a></li>
+
+      <!-- Dropdown Blog Menu -->
+      <li><a class="dropdown-button" href="/blog/" data-activates="blog-dropdown">Blog Posts<i class="material-icons right">arrow_drop_down</i></a></li>
 
     </ul>
 

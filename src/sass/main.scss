@@ -1,2 +1,39 @@
 @import 'custom-materialize';
 @import 'materialize';
+
+body {
+    height: 100%;
+}
+
+.uppercase {
+    text-transform: uppercase;
+}
+
+.italic {
+    font-style: italic;
+}
+
+.text-vcenter {
+    vertical-align: middle;
+}
+
+.overlay {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    background: rgba(51, 51, 51, 0.7);
+    z-index: 10;
+}
+
+.fullscreen-bg {
+    /* Set Image in html */
+    // background-image: url("img_girl.jpg");
+    /* Full height */
+    height: 100vh;
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}

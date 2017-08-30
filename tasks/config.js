@@ -37,7 +37,7 @@ module.exports = {
     },
   },
   images: {
-    extensions: '*.{png,gif,jpg}',
+    extensions: src + 'images/**/*.{png,gif,jpg}',
     src: src + 'images/**/*.{png,gif,jpg}',
     dest: hstatic + 'images',
     responsive: {
@@ -125,9 +125,6 @@ module.exports = {
       src + 'scripts/main.js',
     ],
     dest: hstatic + 'scripts',
-  },
-  styles: {
-
   },
   uglify: {
     options: {
