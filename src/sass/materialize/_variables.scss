@@ -35,7 +35,7 @@
 // 1. Colors
 // ==========================================================================
 
-$primary-color: color("materialize-red", "lighten-2") !default;
+$primary-color: color("blue", "darken-1") !default;
 $primary-color-light: lighten($primary-color, 15%) !default;
 $primary-color-dark: darken($primary-color, 15%) !default;
 
@@ -153,7 +153,7 @@ $dropdown-item-height: 50px !default;
 // 10. Fonts
 // ==========================================================================
 
-$roboto-font-path: "../fonts/roboto/" !default;
+$roboto-font-path: "../fonts/" !default;
 
 
 // 11. Forms

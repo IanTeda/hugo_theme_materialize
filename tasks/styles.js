@@ -10,15 +10,17 @@
 module.exports = (gulp, config, argv, $) => {
   'use strict';
   return function() {
-    let stream = gulp
-      // CSS source files.
-      .src(config.postcss.src)
-
-      // Use source maps for debugging
-      .pipe($.sourcemaps.init())
-
+    let stream = $.merge2(
+      gulp.src(config.css.src)
+        .pipe($.sourcemaps.init()),
+      gulp.src(config.sass.src)
+        // .pipe($.sourcemaps.init())
+        .pipe($.sass()
+          .on('error', $.sass.logError)
+        )
+      )
       // Concatenate css, since order is important
-      .pipe($.concat(config.postcss.filename))
+      .pipe($.concat(config.styles.filename))
       .pipe($.size({title: 'Style concatenated into one file:'}))
 
       // .pipe($.stylelint({
@@ -45,7 +47,7 @@ module.exports = (gulp, config, argv, $) => {
       .pipe($.size({title: 'Source maps written:'}))
 
       // Write stream to drive
-      .pipe(gulp.dest(config.postcss.dest))
+      .pipe(gulp.dest(config.styles.dest))
 
       // Create hash map of script
       .pipe($.hash.manifest('hash.json'))

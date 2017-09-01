@@ -94,54 +94,28 @@ gulp.task(
 );
 
 /**
- * POSTCSS TASKS
- * Usage: gulp postcss:clean - Clean main.css from postcss build folder
- * Usage: gulp postcss:build - Build main.css from source into build folder
- * Usage: gulp postcss       - Clean build folder, then build from source into build folder
-*/
-gulp.task(
-  'postcss:clean',
-  requireCleanTask(
-    config.postcss.dest + '/**/*'
-  )
-);
-gulp.task(
-  'postcss:build',
-  requireTask(
-    'postcss'
-  )
-);
-gulp.task(
-  'postcss',
-  gulp.series(
-    'postcss:clean',
-    'postcss:build'
-  )
-);
-
-/**
  * SASS TASKS
  * Usage: gulp sass:clean  - Clean main.js from the JavaScripts build folder
  * Usage: gulp sass:build  - Build main.js from source into build folder
  * Usage: gulp sass        - Clean build folder, then build from source into build folder
 */
 gulp.task(
-  'sass:clean',
+  'styles:clean',
   requireCleanTask(
-    config.sass.dest + config.sass.filename
+    config.styles.dest + '/**/*'
   )
 );
 gulp.task(
-  'sass:build',
+  'styles:build',
   requireTask(
-    'sass'
+    'styles'
   )
 );
 gulp.task(
-  'sass',
+  'styles',
   gulp.series(
-    'sass:clean',
-    'sass:build'
+    'styles:clean',
+    'styles:build'
   )
 );
 
@@ -177,7 +151,7 @@ gulp.task(
  * Usage: gulp watch:fonts    - Watch for font changes, then clean and build.
  * Usage: gulp watch:images   - Watch for images changes, then clean and build.
  * Usage: gulp watch:scripts  - Watch for script changes, then clean and build.
- * Usage: gulp watch:postcss   - Watch for style changes, then clean and build.
+ * Usage: gulp watch:styles   - Watch for style changes, then clean and build.
  * Usage: gulp watch          - Watch all for changes
 */
 
@@ -193,7 +167,7 @@ gulp.task('watch:images', () => {
 
 // Watch for sass changes
 gulp.task('watch:sass', () => {
-  gulp.watch(config.sass.extensions, gulp.series('sass:build'));
+  gulp.watch(config.sass.extensions, gulp.series('sass'));
 });
 
 // Watch for script changes
@@ -202,17 +176,17 @@ gulp.task('watch:scripts', () => {
 });
 
 // Watch for script changes
-gulp.task('watch:postcss', () => {
-  gulp.watch(config.postcss.extensions, gulp.series('postcss'));
+gulp.task('watch:styles', () => {
+  gulp.watch(config.styles.extensions, gulp.series('styles'));
 });
 
-gulp.task('watch', gulp.parallel('watch:fonts', 'watch:images', 'watch:sass', 'watch:scripts', 'watch:postcss'));
+gulp.task('watch', gulp.parallel('watch:fonts', 'watch:images', 'watch:scripts', 'watch:styles'));
 
 /**
  * MAIN TASKS
  */
 
-gulp.task('build', gulp.parallel('fonts', 'images', 'sass', 'scripts', 'postcss'));
+gulp.task('build', gulp.parallel('fonts', 'images', 'scripts', 'styles'));
 
 gulp.task('hugo', requireTask('hugo'));
 

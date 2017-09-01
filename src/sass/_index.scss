@@ -1,0 +1,22 @@
+#index-header {
+    height: 45vh;
+}
+
+.parallax-container {
+    height: 70vh;
+}
+
+// Class for when element is above threshold
+.navbar-top {
+    position: relative;
+  }
+
+  // Class for when element is below threshold
+  .navbar-bottom {
+    position: relative;
+  }
+
+  // Class for when element is pinned
+  .navbar-pinned {
+    position: fixed !important;
+  }

@@ -8,6 +8,12 @@ const src = 'src/';
 const themeName = 'ianteda2017';
 
 module.exports = {
+  css: {
+    extensions: 'src/styles/**/*.css',
+    src: [
+      src + 'styles/main.css',
+    ],
+  },
   fonts: {
     extensions: '*.{eot,svg,ttf,woff,woff2,otf}',
     src: [
@@ -45,19 +51,31 @@ module.exports = {
         '*': [
           {
             width: 576,
-            rename: {suffix: '@mobile'},
+            rename: {
+              suffix: '@mobile',
+              extname: '.jpg',
+            },
             withoutEnlargement: true,
           }, {
             width: 768,
-            rename: {suffix: '@tablet'},
+            rename: {
+              suffix: '@tablet',
+              extname: '.jpg',
+            },
             withoutEnlargement: true,
           }, {
             width: 992,
-            rename: {suffix: '@desktop'},
+            rename: {
+              suffix: '@desktop',
+              extname: '.jpg',
+            },
             withoutEnlargement: true,
           }, {
             width: 1200,
-            rename: {suffix: '@highres'},
+            rename: {
+              suffix: '@highres',
+              extname: '.jpg',
+            },
             withoutEnlargement: true,
           },
         ],
@@ -88,9 +106,6 @@ module.exports = {
     },
   },
   postcss: {
-    dest: hstatic + 'styles',
-    extensions: 'src/styles/**/*.css',
-    filename: themeName + '.css',
     processors: [
       require('postcss-import'),
       require('postcss-nested'),
@@ -104,13 +119,9 @@ module.exports = {
       require('autoprefixer'),
       require('cssnano'),
     ],
-    src: [
-      src + 'styles/main.css',
-    ],
   },
   sass: {
     extensions: 'src/sass/**/*.scss',
-    filename: 'sass.css',
     src: [
       src + 'sass/main.scss',
     ],
@@ -125,6 +136,10 @@ module.exports = {
       src + 'scripts/main.js',
     ],
     dest: hstatic + 'scripts',
+  },
+  styles: {
+    dest: hstatic + 'styles',
+    filename: themeName + '.css',
   },
   uglify: {
     options: {
