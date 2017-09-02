@@ -1,30 +1,6 @@
 #index-header {
-    height: 45vh;
+    height: 65vh;
     width: 100%;
     background-size: cover; 
     background-position: top;
 }
-
-.parallax-container {
-    height: 70vh;
-    background-color: transparent;
-}
-
-#index-navbar {
-  box-shadow: none;
-}
-
-// Class for when element is above threshold
-.navbar-top {
-    position: relative;
-  }
-
-  // Class for when element is below threshold
-  .navbar-bottom {
-    position: relative;
-  }
-
-  // Class for when element is pinned
-  .navbar-pinned {
-    position: fixed !important;
-  }
