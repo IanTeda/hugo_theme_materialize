@@ -1,9 +1,17 @@
 #index-header {
     height: 45vh;
+    width: 100%;
+    background-size: cover; 
+    background-position: top;
 }
 
 .parallax-container {
     height: 70vh;
+    background-color: transparent;
+}
+
+#index-navbar {
+  box-shadow: none;
 }
 
 // Class for when element is above threshold

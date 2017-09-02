@@ -10,9 +10,7 @@ const themeName = 'ianteda2017';
 module.exports = {
   css: {
     extensions: 'src/styles/**/*.css',
-    src: [
-      src + 'styles/main.css',
-    ],
+    src: src + 'styles/main.css',
   },
   fonts: {
     extensions: '*.{eot,svg,ttf,woff,woff2,otf}',
@@ -121,10 +119,7 @@ module.exports = {
     ],
   },
   sass: {
-    extensions: 'src/sass/**/*.scss',
-    src: [
-      src + 'sass/main.scss',
-    ],
+    src: src + 'sass/main.scss',
     dest: src + 'styles/',
   },
   scripts: {
@@ -138,6 +133,10 @@ module.exports = {
     dest: hstatic + 'scripts',
   },
   styles: {
+    extensions: [
+      'src/sass/**/*.scss',
+      'src/styles/**/*.css',
+    ],
     dest: hstatic + 'styles',
     filename: themeName + '.css',
   },

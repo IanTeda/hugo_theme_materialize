@@ -3,7 +3,8 @@
 
 {{ partial "navbar.html" . }}
 
-<header id="index-header" class="valign-wrapper blue darken-1">
+<header id="index-header" class="valign-wrapper blue z-depth-1" 
+  style="background-image: url({{.Site.BaseURL}}images/{{index .Site.Data.hash "cover-intake-profile@highres.jpg"}})">
   <div class="container">
     <div class="row">
         <h1 class="header center white-text uppercase">{{ $.Site.Title }}</h1>
@@ -13,40 +14,16 @@
     </div>
   </div>
 </header>
-<div class="parallax-container">
-    <div class="parallax">
-    <img
-      width="100%"
-      class="" 
-      sizes="(min-width: 36em) 576w, 768w, 992w, 1200w" 
-      srcset="
-        {{.Site.BaseURL}}images/{{index .Site.Data.hash "cover-intro-cat@mobile.jpg"}} 576w,
-        {{.Site.BaseURL}}images/{{index .Site.Data.hash "cover-intro-cat@tablet.jpg"}} 768w,
-        {{.Site.BaseURL}}images/{{index .Site.Data.hash "cover-intro-cat@desktop.jpg"}} 992w,
-        {{.Site.BaseURL}}images/{{index .Site.Data.hash "cover-intro-cat@highres.jpg"}} 1200w" 
-      alt="Ian Teda profile picture inside the intake tower jump form">
-    </div>
-</div>
 
 
 <div class="container">
   <div class="section">
     <!-- All about Ian Teda, the elevator pitch -->
-    <h1 id="it-about" class="header">About</h1>
-
-    <img 
-      class="responsive-img circle z-depth-2" 
-      sizes="(min-width: 36em) 576w, 768w, 992w, 1200w" 
-      srcset="
-        {{.Site.BaseURL}}images/{{index .Site.Data.hash "head-shot@mobile.jpg"}} 576w,
-        {{.Site.BaseURL}}images/{{index .Site.Data.hash "head-shot@tablet.jpg"}} 768w,
-        {{.Site.BaseURL}}images/{{index .Site.Data.hash "head-shot@desktop.jpg"}} 992w,
-        {{.Site.BaseURL}}images/{{index .Site.Data.hash "head-shot@highres.jpg"}} 1200w" 
-      alt="Ian Teda head shot">
-
+    <h2 id="it-about" class="header">About</h2>
     <p class="flow-text">
       <em>Hi, I am Ian Teda and this my story so far</em>
     </p>
+    <div class="divider"></div>
 
     <p class="flow-text">I have always enjoyed a good adventure, and cannot help but wonder what is around the next bend. The most rewarding adventure
       for me at the moment is raising my two young boys – Austin and Dillan, that I share with my beautiful wife Laura.</p>
@@ -67,19 +44,35 @@
 <div class="container">
   <div class="section">
     <!-- What do I value, my principles. Why should you buy from me -->
-    <h1 id="it-code">Code</h3>
-
+    <h1 id="it-code">Code</h1>
     <p class="flow-text">
       <em>What I am trying to live by</em>
     </p>
+    <div class="divider"></div>
+    <br>
 
-    <blockquote>
-      <p class="flow-text">I choose to be authentic through honesty, integrity and transparency. With a spirit for creativity, imagination and
-        adventure. Seeking personal growth by being curious, learning and reflecting. Looking for freedom through the discipline
-        of habit. But most of all I am trying to be useful by adding value in what I do.
-        <cite>– Ian Teda</cite>
-      </p>
-    </blockquote>
+    <div class="row">
+      <div class="col s12 m3 valign-wrapper">
+        <img 
+        class="responsive-img circle z-depth-2" 
+        sizes="(min-width: 36em) 576w, 768w, 992w, 1200w" 
+        srcset="
+          {{.Site.BaseURL}}images/{{index .Site.Data.hash "head-shot@mobile.jpg"}} 576w,
+          {{.Site.BaseURL}}images/{{index .Site.Data.hash "head-shot@tablet.jpg"}} 768w,
+          {{.Site.BaseURL}}images/{{index .Site.Data.hash "head-shot@desktop.jpg"}} 992w,
+          {{.Site.BaseURL}}images/{{index .Site.Data.hash "head-shot@highres.jpg"}} 1200w" 
+        alt="Ian Teda head shot">
+      </div>
+      <div class="col s12 m9">
+        <blockquote>
+          <p class="flow-text">I choose to be authentic through honesty, integrity and transparency. With a spirit for creativity, imagination and
+            adventure. Seeking personal growth by being curious, learning and reflecting. Looking for freedom through the discipline
+            of habit. But most of all I am trying to be useful by adding value in what I do.
+            <cite>– Ian Teda</cite>
+          </p>
+        </blockquote>
+      </div>
+    </div>
   </div>
 </div>
 
@@ -94,7 +87,7 @@
           <h2 class="center light-blue-text"><a href="#1"><i class="material-icons">schedule</i></a></h2>
           <h5 class="center">Project Management</h5>
 
-          <p class="light">Cost Management, Scheduling, Estimating, Community, &amp; Contract Management</p>
+          <p class="light flow-text">Cost Management, Scheduling, Estimating, Community, &amp; Contract Management</p>
         </div>
       </div>
 
@@ -103,7 +96,7 @@
           <h2 class="center light-blue-text"><a href="#1"><i class="material-icons">directions_railway</i></a></h2>
           <h5 class="center">Engineering</h5>
 
-          <p class="light">Bridges, Drainage, Dams, Water, Precast, Bulk Earthworks, Drill &amp; Blast, Diaphragm Wall Tunnels, Structures
+          <p class="light flow-text">Bridges, Drainage, Dams, Water, Precast, Bulk Earthworks, Drill &amp; Blast, Diaphragm Wall Tunnels, Structures
             &amp; Light Rail, <a href="/engineering/rule-book.html">Engineering Rule Book</a>.</p>
         </div>
       </div>
@@ -115,7 +108,7 @@
           <h2 class="center light-blue-text"><a href="#1"><i class="material-icons">computer</i></a></h2>
           <h5 class="center">Software Development</h5>
 
-          <p class="light">Web Design, Javascript, Java (Andriod), SQL &amp; MongoDB</p>
+          <p class="light flow-text">Web Design, Javascript, Java (Andriod), SQL &amp; MongoDB</p>
         </div>
       </div>
 
@@ -124,7 +117,7 @@
           <h2 class="center light-blue-text"><a href="#1"><i class="material-icons">blur_on</i></a></h2>
           <h5 class="center">Creativity</h5>
 
-          <p class="light">Videography, Photography, Maker (Arduino, Raspberry Pi) &amp; Music</p>
+          <p class="light flow-text">Videography, Photography, Maker (Arduino, Raspberry Pi) &amp; Music</p>
         </div>
       </div>
     </div>
