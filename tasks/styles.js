@@ -12,7 +12,7 @@ module.exports = (gulp, config, argv, $) => {
   return function() {
     let stream = $.merge2(
       gulp.src(config.sass.src)
-      // .pipe($.sourcemaps.init())
+        .pipe($.sourcemaps.init())
         .pipe($.sass()
         .on('error', $.sass.logError)
       ),

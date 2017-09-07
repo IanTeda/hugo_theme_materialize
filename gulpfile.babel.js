@@ -94,30 +94,45 @@ gulp.task(
 );
 
 /**
+ * POSTCSS TASKS
+ * Usage: gulp postcss:clean  - Clean main.js from the JavaScripts build folder
+ * Usage: gulp postcss:build  - Build main.js from source into build folder
+ * Usage: gulp postcss        - Clean build folder, then build from source into build folder
+*/
+gulp.task(
+  'postcss:clean',
+  requireCleanTask(
+    config.postcss.dest + '/**/*.{css,css.map}'
+  )
+);
+gulp.task(
+  'postcss:build',
+  requireTask(
+    'postcss'
+  )
+);
+gulp.task(
+  'postcss',
+  gulp.series(
+    'postcss:clean',
+    'postcss:build'
+  )
+);
+
+
+/**
  * SASS TASKS
  * Usage: gulp sass:clean  - Clean main.js from the JavaScripts build folder
  * Usage: gulp sass:build  - Build main.js from source into build folder
  * Usage: gulp sass        - Clean build folder, then build from source into build folder
 */
 gulp.task(
-  'styles:clean',
-  requireCleanTask(
-    config.styles.dest + '/**/*'
-  )
-);
-gulp.task(
-  'styles:build',
+  'sass:build',
   requireTask(
-    'styles'
+    'sass'
   )
 );
-gulp.task(
-  'styles',
-  gulp.series(
-    'styles:clean',
-    'styles:build'
-  )
-);
+
 
 /**
  * SCRIPT TASKS
@@ -128,7 +143,7 @@ gulp.task(
 gulp.task(
   'scripts:clean',
   requireCleanTask(
-    config.scripts.dest + '/**/*'
+    config.scripts.dest + '/**/*.{js,js.map}'
   )
 );
 gulp.task(
@@ -176,17 +191,17 @@ gulp.task('watch:scripts', () => {
 });
 
 // Watch for script changes
-gulp.task('watch:styles', () => {
-  gulp.watch(config.styles.extensions, gulp.series('styles'));
+gulp.task('watch:postcss', () => {
+  gulp.watch(config.postcss.extensions, gulp.series('postcss'));
 });
 
-gulp.task('watch', gulp.parallel('watch:fonts', 'watch:images', 'watch:scripts', 'watch:styles'));
+gulp.task('watch', gulp.parallel('watch:fonts', 'watch:images', 'watch:scripts', 'watch:postcss'));
 
 /**
  * MAIN TASKS
  */
 
-gulp.task('build', gulp.parallel('fonts', 'images', 'scripts', 'styles'));
+gulp.task('build', gulp.parallel('fonts', 'images', 'scripts', 'postcss'));
 
 gulp.task('hugo', requireTask('hugo'));
 

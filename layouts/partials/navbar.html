@@ -1,32 +1,23 @@
-<!-- Dropdown Blog Menu Structure -->
-<ul id="blog-dropdown" class="dropdown-content">
-  <li><a href="/blog/creative">Creative</a></li>
-  <li><a href="/blog/engineering">Engineering</a></li>
-  <li><a href="/blog/management">Management</a></li>
-  <li><a href="/blog/programming">Progrmming</a></li>
-</ul>
-
-<!-- Navbar -->
-<nav class="" role="navigation" id="index-navbar">
-  <div class="nav-wrapper">
-    <ul class="right hide-on-med-and-down">
-      <li><a href="#story">Story</a></li>
-      <li><a href="#code">Code</a></li>
-      <li><a href="#skills">Skills</a></li>
-      <li><a href="#latest">Latest</a></li>
-      <li><a href="/now">Now</a></li>
-
-      <!-- Dropdown Blog Menu -->
-      <li><a class="dropdown-button" href="/blog/" data-activates="blog-dropdown">Blog Posts<i class="material-icons right">arrow_drop_down</i></a></li>
-    </ul>
-
-    <ul id="nav-mobile" class="side-nav">
-      <li><a href="#story">Story</a></li>
-      <li><a href="#code">Code</a></li>
-      <li><a href="#skills">Skills</a></li>
-      <li><a href="#latest">Latest</a></li>
-      <li><a href="#latest">Blog</a></li>
-    </ul>
-    <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
-  </div>
-</nav>
+<div class="navbar-fixed">
+  <nav class="transparent z-depth-0">
+    <div class="nav-wrapper">
+      <div class="row">
+        <div class="col s12">
+          <a href="#" data-activates="mobile-demo" class="button-collapse show-on-large"><i class="material-icons">menu</i></a>
+          <a href="https://codepen.io/collection/nbBqgY/" class="brand-logo uppercase" target="_blank">{{ $.Site.Title }}</a>
+          <ul class="right hide-on-med-and-down">
+            <li><a href="https://codepen.io/collection/nbBqgY/" target="_blank">Sass</a></li>
+            <li><a href="https://codepen.io/collection/nbBqgY/" target="_blank">Components</a></li>
+            <li><a href="https://codepen.io/collection/nbBqgY/" target="_blank">JavaScript</a></li>
+          </ul>
+        </div>
+      </div>
+      <ul class="side-nav" id="mobile-demo">
+        <li><a href="https://codepen.io/collection/nbBqgY/" target="_blank">Sass</a></li>
+        <li><a href="https://codepen.io/collection/nbBqgY/" target="_blank">Components</a></li>
+        <li><a href="https://codepen.io/collection/nbBqgY/" target="_blank">Javascript</a></li>
+        <li><a href="https://codepen.io/collection/nbBqgY/" target="_blank">Mobile</a></li>
+      </ul>
+    </div>
+  </nav>
+</div>

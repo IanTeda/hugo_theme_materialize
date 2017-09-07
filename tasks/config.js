@@ -5,7 +5,7 @@ let pngquant = require('imagemin-pngquant');
 const hstatic = 'static/';
 const nodeModules = 'node_modules/';
 const src = 'src/';
-const themeName = 'ianteda2017';
+const themeName = 'materialize';
 
 module.exports = {
   css: {
@@ -104,6 +104,9 @@ module.exports = {
     },
   },
   postcss: {
+    dest: hstatic,
+    extensions: 'src/styles/**/*.css',
+    filename: themeName + '.css',
     processors: [
       require('postcss-import'),
       require('postcss-nested'),
@@ -117,27 +120,29 @@ module.exports = {
       require('autoprefixer'),
       require('cssnano'),
     ],
+    src: src + 'styles/main.css',
   },
   sass: {
-    src: src + 'sass/main.scss',
     dest: src + 'styles/',
+    filename: 'materialize-custom.css',
+    src: src + 'sass/materialize.scss',
   },
   scripts: {
     extensions: 'src/scripts/**/*.js',
     filename: themeName + '.js',
     src: [
-      nodeModules + 'jquery/dist/jquery.js',
+      src + 'scripts/jquery.js',
       src + 'scripts/materialize.js',
       src + 'scripts/main.js',
     ],
-    dest: hstatic + 'scripts',
+    dest: hstatic,
   },
   styles: {
+    dest: hstatic + 'styles',
     extensions: [
       'src/sass/**/*.scss',
       'src/styles/**/*.css',
     ],
-    dest: hstatic + 'styles',
     filename: themeName + '.css',
   },
   uglify: {
