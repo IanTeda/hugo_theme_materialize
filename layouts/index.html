@@ -1,20 +1,64 @@
 {{ define "body" }}
 <!-- Inherit from body block defined in baseof.html -->
 
-{{ partial "navbar.html" . }}
-
-<header id="index-header" class="valign-wrapper blue z-depth-1" 
-  style="background-image: url({{.Site.BaseURL}}images/{{index .Site.Data.hash "cover-intake-profile@highres.jpg"}})">
+<header id="index-header" class="valign-wrapper blue z-depth-1" style="background-image: url({{.Site.BaseURL}}images/{{index .Site.Data.hash "cover-intake-profile@highres.jpg"}})">
   <div class="container">
     <div class="row">
-        <h1 class="header center white-text uppercase">{{ $.Site.Title }}</h1>
-        <div class="row center">
-          <h5 class="header col s12 light italic white-text">{{ $.Site.Params.tagLine }}</h5>
+      <h1 class="header center white-text">{{ $.Site.Title }}</h1>
+
+      <nav class="transparent nav-center z-depth-0">
+        <div class="nav-wrapper">
+          <ul id="" class="">
+            <li><a href="#about">About</a></li>
+            <li><a href="#code">Code</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#blog">Blog</a></li>
+          </ul>
         </div>
+      </nav>
+
     </div>
   </div>
 </header>
 
+<div class="container">
+  <div class="section">
+    <div class="slider">
+      <ul class="slides">
+        <li>
+          <img src="{{.Site.BaseURL}}images/{{index .Site.Data.hash "cover-intake-profile@highres.jpg"}}">
+          <div class="caption center-align">
+            <h3>This is our big Tagline!</h3>
+            <h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5>
+          </div>
+        </li>
+        <li>
+          <img src="{{.Site.BaseURL}}images/{{index .Site.Data.hash "cover-intro-cat@highres.jpg"}}">            
+          <div class="caption left-align">
+            <h3>Left Aligned Caption</h3>
+            <h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5>
+          </div>
+        </li>
+        <li>
+          <img src="https://lorempixel.com/580/250/nature/3">
+          <!-- random image -->
+          <div class="caption right-align">
+            <h3>Right Aligned Caption</h3>
+            <h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5>
+          </div>
+        </li>
+        <li>
+          <img src="https://lorempixel.com/580/250/nature/4">
+          <!-- random image -->
+          <div class="caption center-align">
+            <h3>This is our big Tagline!</h3>
+            <h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
 
 <div class="container">
   <div class="section">
@@ -54,20 +98,20 @@
     <div class="row">
       <div class="col s12 m3 valign-wrapper">
         <img 
-        class="responsive-img circle z-depth-2" 
-        sizes="(min-width: 36em) 576w, 768w, 992w, 1200w" 
-        srcset="
-          {{.Site.BaseURL}}images/{{index .Site.Data.hash "head-shot@mobile.jpg"}} 576w,
-          {{.Site.BaseURL}}images/{{index .Site.Data.hash "head-shot@tablet.jpg"}} 768w,
-          {{.Site.BaseURL}}images/{{index .Site.Data.hash "head-shot@desktop.jpg"}} 992w,
-          {{.Site.BaseURL}}images/{{index .Site.Data.hash "head-shot@highres.jpg"}} 1200w" 
-        alt="Ian Teda head shot">
+          class="responsive-img circle z-depth-2" 
+          sizes="(min-width: 36em) 576w, 768w, 992w, 1200w" 
+          srcset="
+            {{.Site.BaseURL}}images/{{index .Site.Data.hash "head-shot@mobile.jpg"}} 576w,
+            {{.Site.BaseURL}}images/{{index .Site.Data.hash "head-shot@tablet.jpg"}} 768w,
+            {{.Site.BaseURL}}images/{{index .Site.Data.hash "head-shot@desktop.jpg"}} 992w,
+            {{.Site.BaseURL}}images/{{index .Site.Data.hash "head-shot@highres.jpg"}} 1200w" 
+          alt="Ian Teda head shot">
       </div>
       <div class="col s12 m9">
         <blockquote>
-          <p class="flow-text">I choose to be authentic through honesty, integrity and transparency. With a spirit for creativity, imagination and
-            adventure. Seeking personal growth by being curious, learning and reflecting. Looking for freedom through the discipline
-            of habit. But most of all I am trying to be useful by adding value in what I do.
+          <p class="flow-text">I choose to be authentic through honesty, integrity and transparency. With a spirit for creativity, imagination
+            and adventure. Seeking personal growth by being curious, learning and reflecting. Looking for freedom through
+            the discipline of habit. But most of all I am trying to be useful by adding value in what I do.
             <cite>– Ian Teda</cite>
           </p>
         </blockquote>
@@ -84,7 +128,7 @@
     <div class="row">
       <div class="col s12 m6">
         <div class="icon-block">
-          <h2 class="center light-blue-text"><a href="#1"><i class="material-icons">schedule</i></a></h2>
+          <h2 class="center"><a href="#1"><i class="material-icons">schedule</i></a></h2>
           <h5 class="center">Project Management</h5>
 
           <p class="light flow-text">Cost Management, Scheduling, Estimating, Community, &amp; Contract Management</p>
@@ -135,7 +179,7 @@
       <div class="col s12 m6">
         <div class="card">
           <div class="card-image waves-effect waves-block waves-light">
-              <img sizes="(min-width: 36em) 576w, 768w, 992w, 1200w" srcset="
+            <img sizes="(min-width: 36em) 576w, 768w, 992w, 1200w" srcset="
               {{ .Site.BaseURL }}images/{{ index .Site.Data.hash "cover-intake-profile@highres.jpg" }} 576w,
               {{ .Site.BaseURL }}images/{{ index .Site.Data.hash "cover-intake-profile@highres.jpg" }} 768w,
               {{ .Site.BaseURL }}images/{{ index .Site.Data.hash "cover-intake-profile@highres.jpg" }} 992w,
@@ -153,53 +197,53 @@
       </div>
 
       <div class="col s12 m6">
-          <div class="card">
-            <div class="card-image waves-effect waves-block waves-light">
-                <img sizes="(min-width: 36em) 576w, 768w, 992w, 1200w" srcset="
+        <div class="card">
+          <div class="card-image waves-effect waves-block waves-light">
+            <img sizes="(min-width: 36em) 576w, 768w, 992w, 1200w" srcset="
                 {{ .Site.BaseURL }}images/{{ index .Site.Data.hash "cover-intake-profile@highres.jpg" }} 576w,
                 {{ .Site.BaseURL }}images/{{ index .Site.Data.hash "cover-intake-profile@highres.jpg" }} 768w,
                 {{ .Site.BaseURL }}images/{{ index .Site.Data.hash "cover-intake-profile@highres.jpg" }} 992w,
                 {{ .Site.BaseURL }}images/{{ index .Site.Data.hash "cover-intake-profile@highres.jpg" }} 1200w" alt="Ian Teda head shot">
-            </div>
-            <div class="card-content">
-              <span class="card-title activator grey-text text-darken-4">Card Title<i class="material-icons right">more_vert</i></span>
-              <p><a href="#">This is a link</a></p>
-            </div>
-            <div class="card-reveal">
-              <span class="card-title grey-text text-darken-4">Card Title<i class="material-icons right">close</i></span>
-              <p>Here is some more information about this product that is only revealed once clicked on.</p>
-            </div>
+          </div>
+          <div class="card-content">
+            <span class="card-title activator grey-text text-darken-4">Card Title<i class="material-icons right">more_vert</i></span>
+            <p><a href="#">This is a link</a></p>
+          </div>
+          <div class="card-reveal">
+            <span class="card-title grey-text text-darken-4">Card Title<i class="material-icons right">close</i></span>
+            <p>Here is some more information about this product that is only revealed once clicked on.</p>
           </div>
         </div>
       </div>
     </div>
-
   </div>
+
+</div>
 </div>
 
 <div class="container">
-    <div class="section">
-        <h1 id="it-featured">Email List</h1>
+  <div class="section">
+    <h1 id="it-featured">Email List</h1>
 
+    <div class="row">
+      <form class="col s12">
         <div class="row">
-            <form class="col s12">
-              <div class="row">
-                <div class="input-field col s5">
-                  <i class="material-icons prefix">person</i>
-                  <input id="icon_prefix" type="text" class="validate">
-                  <label for="icon_prefix">Name</label>
-                </div>
-                <div class="input-field col s5">
-                  <i class="material-icons prefix">email</i>
-                  <input id="icon_telephone" type="email" class="validate">
-                  <label for="icon_telephone">Email</label>
-                </div>
-                <a class="waves-effect waves-light btn col s2"><i class="material-icons left">send</i>send</a>                
-              </div>
-            </form>
+          <div class="input-field col s5">
+            <i class="material-icons prefix">person</i>
+            <input id="icon_prefix" type="text" class="validate">
+            <label for="icon_prefix">Name</label>
           </div>
-
+          <div class="input-field col s5">
+            <i class="material-icons prefix">email</i>
+            <input id="icon_telephone" type="email" class="validate">
+            <label for="icon_telephone">Email</label>
+          </div>
+          <a class="waves-effect waves-light btn col s2"><i class="material-icons left">send</i>send</a>
+        </div>
+      </form>
     </div>
+
+  </div>
 </div>
 
 <footer class="page-footer">

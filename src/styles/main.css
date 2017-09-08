@@ -1,3 +1,9 @@
-@import "./normalize.css";
-@import "./animate.css";
+@import "./normalize";
+@import "./animate";
 @import "./materialize-custom";
+
+@import "./index";
+
+.uppercase {
+    text-transform: uppercase;
+}

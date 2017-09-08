@@ -1,4 +1,5 @@
 $(document).ready(function() {
+    
     // MODAL
     $('.modal').modal();
 
@@ -15,4 +16,8 @@ $(document).ready(function() {
 
     // SIDENAV
     $('.button-collapse').sideNav();
+
+    $('.carousel.carousel-slider').carousel({fullWidth: true});
+
+    $('.slider').slider();
 });
