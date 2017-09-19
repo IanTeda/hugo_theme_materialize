@@ -12,9 +12,14 @@
 
     <!-- Default Footer -->
     {{ partial "footer.html"}}
-  </body>
 
-  <!-- Load themes Javascript file -->
-  <script src='{{ .Site.BaseURL }}{{ index .Site.Data.hash "materialize.min.js" }}'></script>  
+    <!-- code for localhost only -->
+    {{ if eq (printf "%v" $.Site.BaseURL) "http://localhost:1313/" }}
+      {{ partial "breakpoint-helper.html" . }}
+    {{ end }}
+
+    <!-- Load themes Javascript file -->
+    <script src='{{ .Site.BaseURL }}{{ index .Site.Data.hash "materialize.min.js" }}'></script>
+  </body>
 
   </html>
