@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+
+  <!-- Default Page Head -->
+  {{ partial "head.html" . }}
+
+  <body>
+
+    {{ partial "navbar.html" . }}
+    
+      <div class="row">
+        <div class="col m12 l3 hide-on-med-and-down">
+          {{ partial "navside.html" . }}
+        </div>
+        <div class="col m12 l9">
+          {{ partial "breadcrumb.html" . }}
+            
+          {{ .Content }}            
+        </div>
+      </div>
+   
+    <!-- Default Footer -->
+    {{ partial "footer.html" .}}
+
+    <!-- code for localhost only -->
+    {{ if eq (printf "%v" $.Site.BaseURL) "http://localhost:1313/" }}
+      {{ partial "helper-breakpoint.html" . }}
+    {{ end }}
+
+    <!-- Load themes Javascript file -->
+    <script src='{{ .Site.BaseURL }}{{ index .Site.Data.hash "materialize.min.js" }}'></script>
+  </body>
+
+  </html>

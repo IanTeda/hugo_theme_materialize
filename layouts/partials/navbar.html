@@ -1,20 +1,10 @@
-  <nav class="z-depth-0 transparent">
+<div class="navbar-fixed">
+  <nav>
     <div class="nav-wrapper">
-      <div class="row">
-        <div class="col s12">
-          <a href="#" data-activates="mobile-demo" class="button-collapse show-on-large"><i class="material-icons">menu</i></a>
-          <ul class="right hide-on-med-and-down">
-            <li><a href="https://codepen.io/collection/nbBqgY/" target="_blank">Sass</a></li>
-            <li><a href="https://codepen.io/collection/nbBqgY/" target="_blank">Components</a></li>
-            <li><a href="https://codepen.io/collection/nbBqgY/" target="_blank">JavaScript</a></li>
-          </ul>
-        </div>
-      </div>
-      <ul class="side-nav" id="mobile-demo">
-        <li><a href="https://codepen.io/collection/nbBqgY/" target="_blank">Sass</a></li>
-        <li><a href="https://codepen.io/collection/nbBqgY/" target="_blank">Components</a></li>
-        <li><a href="https://codepen.io/collection/nbBqgY/" target="_blank">Javascript</a></li>
-        <li><a href="https://codepen.io/collection/nbBqgY/" target="_blank">Mobile</a></li>
-      </ul>
+      <a href="#!" class="brand-logo">{{ .Site.Title }}</a>
+      <a href="#" data-activates="mobile-sidenav" class="button-collapse"><i class="material-icons">menu</i></a>
     </div>
   </nav>
+</div>
+
+{{ partial "sidenav-mobile.html" .}}

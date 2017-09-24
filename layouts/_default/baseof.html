@@ -15,7 +15,7 @@
 
     <!-- code for localhost only -->
     {{ if eq (printf "%v" $.Site.BaseURL) "http://localhost:1313/" }}
-      {{ partial "breakpoint-helper.html" . }}
+      {{ partial "helper-breakpoint.html" . }}
     {{ end }}
 
     <!-- Load themes Javascript file -->

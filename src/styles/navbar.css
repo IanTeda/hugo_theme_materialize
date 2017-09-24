@@ -1,0 +1,7 @@
+.navbar-fixed {
+    margin-bottom: 20px;
+
+    .brand-logo {
+        text-transform: uppercase;
+    }
+}

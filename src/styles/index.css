@@ -11,11 +11,14 @@
     .nav-center ul {
         text-align: center;
     }
+   
     .nav-center ul li {
         display: inline;
         float: none;
     }
+   
     .nav-center ul li a {
         display: inline-block;
+        font-size: 1.8em;        
     }
 }

@@ -4,7 +4,7 @@
 <header id="index-header" class="valign-wrapper blue z-depth-1" style="background-image: url({{$.Site.BaseURL}}images/{{index $.Site.Data.hash "cover-intake-profile@highres.jpg"}})">
   <div class="container">
     <div class="row">
-      <h1 class="header center white-text">Ian<strong>Teda</strong></h1>
+      <h1 class="header center white-text">IAN<strong>TEDA</strong></h1>
 
       <nav class="transparent nav-center z-depth-0">
         <div class="nav-wrapper">
@@ -55,10 +55,11 @@
         <div class="divider"></div>
         <br>
     
-        <div class="row valign-wrapper">
+        <div class="row valign-wrapper hide-on-small-only">
           <div class="col s3">
             <img 
-              class="circle z-depth-2" 
+              class="circle z-depth-2"
+              width="100%" 
               sizes="(min-width: 36em) 576w, 768w, 992w, 1200w" 
               srcset="
                 {{.Site.BaseURL}}images/{{index $.Site.Data.hash "head-shot@mobile.jpg"}} 576w,
@@ -77,6 +78,31 @@
             </blockquote>
           </div>
         </div>
+
+        <div class="row hide-on-med-and-up">
+            <div class="col s12">
+              <img 
+                class="circle z-depth-2"
+                width="100%" 
+                sizes="(min-width: 36em) 576w, 768w, 992w, 1200w" 
+                srcset="
+                  {{.Site.BaseURL}}images/{{index $.Site.Data.hash "head-shot@mobile.jpg"}} 576w,
+                  {{.Site.BaseURL}}images/{{index $.Site.Data.hash "head-shot@tablet.jpg"}} 768w,
+                  {{.Site.BaseURL}}images/{{index $.Site.Data.hash "head-shot@desktop.jpg"}} 992w,
+                  {{.Site.BaseURL}}images/{{index $.Site.Data.hash "head-shot@highres.jpg"}} 1200w" 
+                alt="Ian Teda head shot">
+            </div>
+            <div class="col s12">
+              <blockquote>
+                <p class="flow-text">I choose to be authentic through honesty, integrity and transparency. With a spirit for creativity, imagination
+                  and adventure. Seeking personal growth by being curious, learning and reflecting. Looking for freedom through
+                  the discipline of habit. But most of all I am trying to be useful by adding value in what I do.
+                  <cite>– Ian Teda</cite>
+                </p>
+              </blockquote>
+            </div>
+          </div>
+
       </div>
     </div>
 </div>
@@ -162,39 +188,16 @@
                     {{ .Site.BaseURL }}images/{{ index .Site.Data.images (printf "%s@desktop.jpg" .Params.cover) }} 992w,
                     {{ .Site.BaseURL }}images/{{ index .Site.Data.images (printf "%s@highres.jpg" .Params.cover) }} 1200w"
                     alt="{{.Title}}">
-                </div>
-                <div class="card-content">
-                  <span class="card-title activator grey-text text-darken-4">{{.Title}}<i class="material-icons right">more_vert</i></span>
-                  <p><a href="{{ $.Permalink }}">Read more ...</a></p>
+                  <span class="card-title activator">{{.Title}}</span>
                 </div>
                 <div class="card-reveal">
                   <span class="card-title grey-text text-darken-4">{{.Title}}<i class="material-icons right">close</i></span>
-                  <p>Here is some more information about this product that is only revealed once clicked on.</p>
-                  {{ .Params.cover }}
+                  <p>{{.Params.description}}</p>
+                  <p><a href="{{.Permalink}}">Read more ...</a></p>
                 </div>
               </div>
             </div>
           {{ end }}
-
-        <div class="col s12 m6">
-          <div class="card">
-            <div class="card-image waves-effect waves-block waves-light">
-              <img sizes="(min-width: 36em) 576w, 768w, 992w, 1200w" srcset="
-                  {{ .Site.BaseURL }}images/{{ index .Site.Data.hash "cover-intake-profile@mobile.jpg" }} 576w,
-                  {{ .Site.BaseURL }}images/{{ index .Site.Data.hash "cover-intake-profile@tablet.jpg" }} 768w,
-                  {{ .Site.BaseURL }}images/{{ index .Site.Data.hash "cover-intake-profile@desktop.jpg" }} 992w,
-                  {{ .Site.BaseURL }}images/{{ index .Site.Data.hash "cover-intake-profile@highres.jpg" }} 1200w" alt="Ian Teda head shot">
-            </div>
-            <div class="card-content">
-              <span class="card-title activator grey-text text-darken-4">Card Title<i class="material-icons right">more_vert</i></span>
-              <p><a href="#">This is a link</a></p>
-            </div>
-            <div class="card-reveal">
-              <span class="card-title grey-text text-darken-4">Card Title<i class="material-icons right">close</i></span>
-              <p>Here is some more information about this product that is only revealed once clicked on.</p>
-            </div>
-          </div>
-        </div>
       </div>
     </div>
 
@@ -258,13 +261,13 @@
   <div class="footer-copyright">
       <div class="container">
         © 2017 Ian Teda
-        <a class="grey-text text-lighten-4 right" href="#!"><i class="fa fa-github-square fa-2x" aria-hidden="true"></i>&nbsp;&nbsp;</a>
-        <a class="grey-text text-lighten-4 right" href="#!"><i class="fa fa-linkedin-square fa-2x" aria-hidden="true"></i>&nbsp;&nbsp;</a>
-        <a class="grey-text text-lighten-4 right" href="#!"><i class="fa fa-youtube-square fa-2x" aria-hidden="true"></i>&nbsp;&nbsp;</a>
-        <a class="grey-text text-lighten-4 right" href="#!"><i class="fa fa-instagram fa-2x" aria-hidden="true"></i>&nbsp;&nbsp;</a>
-        <a class="grey-text text-lighten-4 right" href="#!"><i class="fa fa-twitter-square fa-2x" aria-hidden="true"></i>&nbsp;&nbsp;</a>
-        <a class="grey-text text-lighten-4 right" href="#!"><i class="fa fa-facebook-square fa-2x" aria-hidden="true"></i>&nbsp;&nbsp;</a>
-        <a class="grey-text text-lighten-4 right" href="#!"><i class="fa fa-envelope fa-2x" aria-hidden="true"></i>&nbsp;&nbsp;</a>
+        <a class="grey-text text-lighten-4 right" href="{{.Site.Params.github}}" target="_blank"><i class="fa fa-github-square fa-2x" aria-hidden="true"></i>&nbsp;&nbsp;</a>
+        <a class="grey-text text-lighten-4 right" href="{{.Site.Params.linkedin}}" target="_blank"><i class="fa fa-linkedin-square fa-2x" aria-hidden="true"></i>&nbsp;&nbsp;</a>
+        <a class="grey-text text-lighten-4 right" href="{{.Site.Params.youtube}}" target="_blank"><i class="fa fa-youtube-square fa-2x" aria-hidden="true"></i>&nbsp;&nbsp;</a>
+        <a class="grey-text text-lighten-4 right" href="{{.Site.Params.instagram}}" target="_blank"><i class="fa fa-instagram fa-2x" aria-hidden="true"></i>&nbsp;&nbsp;</a>
+        <a class="grey-text text-lighten-4 right" href="{{.Site.Params.twitter}}" target="_blank"><i class="fa fa-twitter-square fa-2x" aria-hidden="true"></i>&nbsp;&nbsp;</a>
+        <a class="grey-text text-lighten-4 right" href="{{.Site.Params.facebook}}" target="_blank"><i class="fa fa-facebook-square fa-2x" aria-hidden="true"></i>&nbsp;&nbsp;</a>
+        <a class="grey-text text-lighten-4 right" href="{{.Site.Params.email}}" target="_blank"><i class="fa fa-envelope fa-2x" aria-hidden="true"></i>&nbsp;&nbsp;</a>
       </div>
     </div>
 </footer>

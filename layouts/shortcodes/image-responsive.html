@@ -1,0 +1,6 @@
+<img sizes="(min-width: 36em) 576w, 768w, 992w, 1200w" srcset="
+    {{ .Site.BaseURL }}images/{{ index .Site.Data.images (printf "%s@mobile.jpg" (.Get "src")) }} 576w,
+    {{ .Site.BaseURL }}images/{{ index .Site.Data.images (printf "%s@tablet.jpg" (.Get "src")) }} 768w,
+    {{ .Site.BaseURL }}images/{{ index .Site.Data.images (printf "%s@desktop.jpg" (.Get "src")) }} 992w,
+    {{ .Site.BaseURL }}images/{{ index .Site.Data.images (printf "%s@highres.jpg" (.Get "src")) }} 1200w"
+    alt="Test">

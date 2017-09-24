@@ -1,0 +1,7 @@
+.breadcrumb:before {
+    color: black;
+}
+
+.breadcrumb, .breadcrumb:last-child {
+    color: black;
+ }
