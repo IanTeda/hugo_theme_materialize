@@ -1,10 +1,8 @@
-<div class="navbar-fixed">
-  <nav>
-    <div class="nav-wrapper">
-      <a href="#!" class="brand-logo">{{ .Site.Title }}</a>
-      <a href="#" data-activates="navside" class="button-collapse"><i class="material-icons">menu</i></a>
-    </div>
-  </nav>
-</div>
+<nav class="transparent z-depth-0">
+  <div class="nav-wrapper">
+    <a href="{{ .Site.BaseURL }}" class="left brand-logo">{{ .Site.Title }}</a>
+    <a href="#" data-activates="navside" class="button-collapse show-on-large right"><i class="material-icons">menu</i></a>
+  </div>
+</nav>
 
 {{ partial "navside.html" . }}

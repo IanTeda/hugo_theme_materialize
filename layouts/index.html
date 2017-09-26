@@ -166,10 +166,10 @@
 
 <!-- Featured products. How have I been adding value -->
 <div class="grey lighten-4">
-  <div class="container">
+  <div id="it-featured" class="container">
     <div class="section">
 
-      <h2 id="it-featured">Featured Posts</h2>
+      <h2>Featured Posts</h2>
       <p class="flow-text">
         <em>Some ideas (thoughts) that I have put a URL to:</em>
       </p>
@@ -178,29 +178,23 @@
 
       <!-- List the last 2 posts -->
       <div class="row">
-          {{ range first 2 .Data.Pages }}
-            <div class="col s12 m6">
-              <div class="card">
-                <div class="card-image">
-                  <img sizes="(min-width: 36em) 576w, 768w, 992w, 1200w" srcset="
-                    {{ .Site.BaseURL }}images/{{ index .Site.Data.images (printf "%s@mobile.jpg" .Params.cover) }} 576w,
-                    {{ .Site.BaseURL }}images/{{ index .Site.Data.images (printf "%s@tablet.jpg" .Params.cover) }} 768w,
-                    {{ .Site.BaseURL }}images/{{ index .Site.Data.images (printf "%s@desktop.jpg" .Params.cover) }} 992w,
-                    {{ .Site.BaseURL }}images/{{ index .Site.Data.images (printf "%s@highres.jpg" .Params.cover) }} 1200w"
-                    alt="{{.Title}}">
-                  <span class="card-title activator">{{.Title}}</span>
-                </div>
-                <div class="card-reveal">
-                  <span class="card-title grey-text text-darken-4">{{.Title}}<i class="material-icons right">close</i></span>
-                  <p>{{.Params.description}}</p>
-                  <p><a href="{{.Permalink}}">Read more ...</a></p>
-                </div>
-              </div>
-            </div>
-          {{ end }}
-      </div>
-    </div>
+        {{ range first 2 .Data.Pages }}
 
+          <div class="col s12 m6">
+            <a href="{{.Permalink}}" class="white-text">
+              <div class="card-panel blog-card valign-wrapper" style="background-image: url({{ .Site.BaseURL }}images/{{ index .Site.Data.images (printf "%s@highres.jpg" .Params.cover) }})">
+                  <div>
+                    <h5 class="center-align">{{.Title}}</h5>
+                    <h6 class="center-align">{{.Params.description}}</h6>
+                  </div>
+              </div>
+            </a>
+          </div>
+
+        {{ end }}
+      </div>
+
+    </div>
   </div>
 </div>
 
@@ -208,6 +202,11 @@
 <div class="container">
   <div class="section">
     <h1 id="it-featured">Email List</h1>
+    <p class="flow-text">
+      <em>Keep up date with latest happenings:</em>
+    </p>
+    <div class="divider"></div>
+    <br><br><br>
 
     <div class="row">
       <form class="col s12">
@@ -229,47 +228,5 @@
 
   </div>
 </div>
-
-<footer class="page-footer">
-  <div class="container">
-    <div class="row">
-      <div class="col l6 s12">
-        <h5 class="white-text">Ian Teda</h5>
-        <p class="grey-text text-lighten-4">Husband, Father, Engineer, Explorer & Creator</p>
-
-
-      </div>
-      <div class="col l3 s12">
-        <h5 class="white-text">Blog Posts</h5>
-        <ul>
-          <li><a class="white-text" href="{{ .Site.BaseURL }}creativity">Creativity</a></li>
-          <li><a class="white-text" href="{{ .Site.BaseURL }}engineering">Engineering</a></li>
-          <li><a class="white-text" href="{{ .Site.BaseURL }}project-management">Project Management</a></li>
-          <li><a class="white-text" href="{{ .Site.BaseURL }}software-development">Software Development</a></li>
-        </ul>
-      </div>
-      <div class="col l3 s12">
-        <h5 class="white-text">Pages</h5>
-        <ul>
-          <li><a class="white-text" href="#!">Now</a></li>
-          <li><a class="white-text" href="#!">Engineering Rule Book</a></li>
-        </ul>
-      </div>
-    </div>
-  </div>
-
-  <div class="footer-copyright">
-      <div class="container">
-        © 2017 Ian Teda
-        <a class="grey-text text-lighten-4 right" href="{{.Site.Params.github}}" target="_blank"><i class="fa fa-github-square fa-2x" aria-hidden="true"></i>&nbsp;&nbsp;</a>
-        <a class="grey-text text-lighten-4 right" href="{{.Site.Params.linkedin}}" target="_blank"><i class="fa fa-linkedin-square fa-2x" aria-hidden="true"></i>&nbsp;&nbsp;</a>
-        <a class="grey-text text-lighten-4 right" href="{{.Site.Params.youtube}}" target="_blank"><i class="fa fa-youtube-square fa-2x" aria-hidden="true"></i>&nbsp;&nbsp;</a>
-        <a class="grey-text text-lighten-4 right" href="{{.Site.Params.instagram}}" target="_blank"><i class="fa fa-instagram fa-2x" aria-hidden="true"></i>&nbsp;&nbsp;</a>
-        <a class="grey-text text-lighten-4 right" href="{{.Site.Params.twitter}}" target="_blank"><i class="fa fa-twitter-square fa-2x" aria-hidden="true"></i>&nbsp;&nbsp;</a>
-        <a class="grey-text text-lighten-4 right" href="{{.Site.Params.facebook}}" target="_blank"><i class="fa fa-facebook-square fa-2x" aria-hidden="true"></i>&nbsp;&nbsp;</a>
-        <a class="grey-text text-lighten-4 right" href="{{.Site.Params.email}}" target="_blank"><i class="fa fa-envelope fa-2x" aria-hidden="true"></i>&nbsp;&nbsp;</a>
-      </div>
-    </div>
-</footer>
 
 {{ end }}

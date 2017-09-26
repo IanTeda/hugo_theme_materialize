@@ -1,19 +1,17 @@
-<header id="index-header" class="valign-wrapper blue z-depth-1" style="background-image: url({{$.Site.BaseURL}}images/{{index $.Site.Data.hash "cover-intake-profile@highres.jpg"}})">
+<header 
+  id="single-header"
+  class="blue z-depth-1 single-header"
+  style="background-image: url({{ .Site.BaseURL }}images/{{ index .Site.Data.images (printf "%s@highres.jpg" .Params.cover) }})">
+  
+  {{ partial "navbar.html" . }}
+  
+  <div class="valign-wrapper">
     <div class="container">
       <div class="row">
-        <h1 class="header center white-text">IAN<strong>TEDA</strong></h1>
-  
-        <nav class="transparent nav-center z-depth-0">
-          <div class="nav-wrapper">
-            <ul id="" class="">
-              <li><a href="#it-about">About</a></li>
-              <li><a href="#it-code">Code</a></li>
-              <li><a href="#it-skills">Skills</a></li>
-              <li><a href="#it-blog">Blog</a></li>
-            </ul>
-          </div>
-        </nav>
-  
+    
+        <h1 class="header center white-text"><strong> {{ .Title }} </strong></h1>
+    
       </div>
     </div>
-  </header>
+  </div>
+</header>

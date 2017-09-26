@@ -7,6 +7,7 @@
 @import "./index";
 @import "./navbar";
 @import "./breadcrumb";
+@import "./single";
 
 .uppercase {
     text-transform: uppercase;
@@ -15,3 +16,16 @@
 #single {
     margin-top: 30px;
 }
+
+.blog-card {
+    div {
+        width: 100%;
+    }
+}
+
+/* Maintain fluid aspect ratio */
+.blog-card:after {
+    content: "";
+    display: block;
+    padding-bottom: 70%;
+  }

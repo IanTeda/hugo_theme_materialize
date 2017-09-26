@@ -6,21 +6,25 @@
 
   <body>
 
-    {{ partial "navbar.html" . }}
+    {{ partial "header.html" . }}
     
+    <div class="container">
       <div class="row">
-        <div class="col m12 l3 hide-on-med-and-down">
-          {{ partial "navside.html" . }}
-        </div>
-        <div class="col m12 l9">
-          <h1>Blog Title</h1>          
+        <div class="col flow-text">
+
+          <h2>{{ .Title }} </h2>
+          
           {{ partial "breadcrumb.html" . }}
-            
-          {{ .Content }}            
+          
+
+          {{ .Content }}
+          
+          <div class="divider"></div>
         </div>
-      </div>
-   
-    <!-- Default Footer -->
+      </div>      
+    </div>
+
+    <!-- Footer -->
     {{ partial "footer.html" .}}
 
     <!-- code for localhost only -->
