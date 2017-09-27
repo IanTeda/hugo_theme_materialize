@@ -1,0 +1,7 @@
+.footer-copyright {
+
+    .row {
+        margin-bottom: 0px; /** Grid row adds 20px to the bottom, lets get ride of it */
+    }
+
+}

@@ -4,8 +4,10 @@
 @import "./materialize-custom";
 
 @import "./helper-breakpoint";
+@import "./footer";
 @import "./index";
 @import "./navbar";
+@import "./navside";
 @import "./breadcrumb";
 @import "./single";
 

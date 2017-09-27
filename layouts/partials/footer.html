@@ -10,17 +10,17 @@
             <div class="col l3 s12">
               <h5 class="white-text">Blog Categories</h5>
               <ul>
-                <li><a class="white-text" href="{{ .Site.BaseURL }}creativity">Creativity</a></li>
-                <li><a class="white-text" href="{{ .Site.BaseURL }}engineering">Engineering</a></li>
-                <li><a class="white-text" href="{{ .Site.BaseURL }}project-management">Project Management</a></li>
-                <li><a class="white-text" href="{{ .Site.BaseURL }}software-development">Software Development</a></li>
+                <li><a class="white-text" href="/blog/creativity">Creativity</a></li>
+                <li><a class="white-text" href="/blog/engineering">Engineering</a></li>
+                <li><a class="white-text" href="/blog/project-management">Project Management</a></li>
+                <li><a class="white-text" href="/blog/software-development">Software Development</a></li>
               </ul>
             </div>
             <div class="col l3 s12">
               <h5 class="white-text">Pages</h5>
               <ul>
-                <li><a class="white-text" href="#!">Now</a></li>
-                <li><a class="white-text" href="#!">Engineering Rule Book</a></li>
+                <li><a class="white-text" href="/now/">Now</a></li>
+                <li><a class="white-text" href="/engineering-rule-book/">Engineering Rule Book</a></li>
               </ul>
             </div>
           </div>
@@ -28,14 +28,20 @@
       
         <div class="footer-copyright">
             <div class="container">
-              © 2017 Ian Teda
-              <a class="grey-text text-lighten-4 right" href="{{.Site.Params.github}}" target="_blank"><i class="fa fa-github-square fa-2x" aria-hidden="true"></i>&nbsp;&nbsp;</a>
-              <a class="grey-text text-lighten-4 right" href="{{.Site.Params.linkedin}}" target="_blank"><i class="fa fa-linkedin-square fa-2x" aria-hidden="true"></i>&nbsp;&nbsp;</a>
-              <a class="grey-text text-lighten-4 right" href="{{.Site.Params.youtube}}" target="_blank"><i class="fa fa-youtube-square fa-2x" aria-hidden="true"></i>&nbsp;&nbsp;</a>
-              <a class="grey-text text-lighten-4 right" href="{{.Site.Params.instagram}}" target="_blank"><i class="fa fa-instagram fa-2x" aria-hidden="true"></i>&nbsp;&nbsp;</a>
-              <a class="grey-text text-lighten-4 right" href="{{.Site.Params.twitter}}" target="_blank"><i class="fa fa-twitter-square fa-2x" aria-hidden="true"></i>&nbsp;&nbsp;</a>
-              <a class="grey-text text-lighten-4 right" href="{{.Site.Params.facebook}}" target="_blank"><i class="fa fa-facebook-square fa-2x" aria-hidden="true"></i>&nbsp;&nbsp;</a>
-              <a class="grey-text text-lighten-4 right" href="{{.Site.Params.email}}" target="_blank"><i class="fa fa-envelope fa-2x" aria-hidden="true"></i>&nbsp;&nbsp;</a>
+              <div class="row valign-wrapper">
+                <div class="col s6 left">
+                  © 2017 Ian Teda
+                </div>
+                <div class="col s6 right">
+                  <a class="grey-text text-lighten-4 right" href="{{.Site.Params.github}}" target="_blank"><i class="fa fa-github-square fa-2x" aria-hidden="true"></i>&nbsp;&nbsp;</a>
+                  <a class="grey-text text-lighten-4 right" href="{{.Site.Params.linkedin}}" target="_blank"><i class="fa fa-linkedin-square fa-2x" aria-hidden="true"></i>&nbsp;&nbsp;</a>
+                  <a class="grey-text text-lighten-4 right" href="{{.Site.Params.youtube}}" target="_blank"><i class="fa fa-youtube-square fa-2x" aria-hidden="true"></i>&nbsp;&nbsp;</a>
+                  <a class="grey-text text-lighten-4 right" href="{{.Site.Params.instagram}}" target="_blank"><i class="fa fa-instagram fa-2x" aria-hidden="true"></i>&nbsp;&nbsp;</a>
+                  <a class="grey-text text-lighten-4 right" href="{{.Site.Params.twitter}}" target="_blank"><i class="fa fa-twitter-square fa-2x" aria-hidden="true"></i>&nbsp;&nbsp;</a>
+                  <a class="grey-text text-lighten-4 right" href="{{.Site.Params.facebook}}" target="_blank"><i class="fa fa-facebook-square fa-2x" aria-hidden="true"></i>&nbsp;&nbsp;</a>
+                  <a class="grey-text text-lighten-4 right" href="mailto://{{.Site.Params.email}}" target="_blank"><i class="fa fa-envelope fa-2x" aria-hidden="true"></i>&nbsp;&nbsp;</a>
+                </div>
+              </div>
             </div>
           </div>
       </footer>
