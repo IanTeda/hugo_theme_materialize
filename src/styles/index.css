@@ -22,3 +22,12 @@
         font-size: 1.8em;        
     }
 }
+
+blockquote {
+    font-style: italic;
+    margin-left: 60px;
+}
+
+.text-justify {
+    text-align: justify;
+}
