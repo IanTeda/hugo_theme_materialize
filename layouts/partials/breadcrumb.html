@@ -1,9 +1,19 @@
 <nav class="grey lighten-4 z-depth-0">
     <div class="nav-wrapper">
         <div class="col s12">
-            <a href="#!" class="breadcrumb">First</a>
-            <a href="#!" class="breadcrumb">Second</a>
-            <a href="#!" class="breadcrumb">Third</a>
+            {{ $url := replace .Permalink ( printf "%s" .Site.BaseURL) "" }}
+            {{ $.Scratch.Add "path" .Site.BaseURL }}
+            <a class="breadcrumb" href="/">
+                <i class="material-icons">home</i>
+            </a>
+            {{ range $index, $element := split $url "/" }}
+                {{ $.Scratch.Add "path" $element }}
+                {{ if ne $element "" }}
+                    <a class="breadcrumb" href='{{ $.Scratch.Get "path" }}'>{{ . }}</a>
+                    {{ $.Scratch.Add "path" "/" }}
+                {{ end }}
+            {{ end }}
         </div>
     </div>
 </nav>
+
