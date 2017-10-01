@@ -55,6 +55,7 @@
         <div class="divider"></div>
         <br>
     
+        <!-- shown on tablet screens and up -->
         <div class="row valign-wrapper hide-on-small-only">
           <div class="col s3">
             <img 
@@ -79,8 +80,9 @@
           </div>
         </div>
 
+        <!-- shown on mobile screens -->
         <div class="row hide-on-med-and-up">
-            <div class="col s12">
+            <div class="col s8 offset-s2">
               <img 
                 class="circle z-depth-2"
                 width="100%" 
@@ -93,7 +95,7 @@
                 alt="Ian Teda head shot">
             </div>
             <div class="col s12">
-              <blockquote>
+              <blockquote class="no-margin">
                 <p class="flow-text text-justify">I choose to be authentic through honesty, integrity and transparency. With a spirit for creativity, imagination
                   and adventure. Seeking personal growth by being curious, learning and reflecting. Looking for freedom through
                   the discipline of habit. But most of all I am trying to be useful by adding value in what I do.
@@ -122,8 +124,8 @@
 
       <div class="col s12 m6">
         <div class="icon-block">
-          <h2 class="center"><a href="{{$.Site.BaseURL}}/project-management"><i class="material-icons large">schedule</i></a></h2>
-          <h5 class="center"><a href="{{$.Site.BaseURL}}/project-management">Project Management</a></h5>
+          <h2 class="center"><a href="/project-management"><i class="material-icons large">schedule</i></a></h2>
+          <h5 class="center"><a href="/project-management">Project Management</a></h5>
 
           <p class="light flow-text center-align">Cost Management, Scheduling, Estimating, Community, &amp; Contract Management.</p>
         </div>
@@ -131,11 +133,11 @@
 
       <div class="col s12 m6">
         <div class="icon-block">
-          <h2 class="center"><a href="{{$.Site.BaseURL}}/engineering"><i class="material-icons large">directions_railway</i></a></h2>
-          <h5 class="center"><a href="{{$.Site.BaseURL}}/engineering">Engineering</a></h5>
+          <h2 class="center"><a href="/engineering"><i class="material-icons large">directions_railway</i></a></h2>
+          <h5 class="center"><a href="/engineering">Engineering</a></h5>
 
           <p class="light flow-text center-align">Bridges, Drainage, Dams, Water, Precast, Bulk Earthworks, Drill &amp; Blast, Diaphragm Wall Tunnels, Structures
-            &amp; Light Rail, <a href="{{$.Site.BaseURL}}//engineering/rule-book.html">Engineering Rule Book</a>.</p>
+            &amp; Light Rail, <a href="/engineering/rule-book.html">Engineering Rule Book</a>.</p>
         </div>
       </div>
     </div>
@@ -143,8 +145,8 @@
     <div class="row">
       <div class="col s12 m6">
         <div class="icon-block">
-          <h2 class="center"><a href="{{$.Site.BaseURL}}/software-development"><i class="material-icons large">computer</i></a></h2>
-          <h5 class="center"><a href="{{$.Site.BaseURL}}/software-development">Software Development</a></h5>
+          <h2 class="center"><a href="/software-development"><i class="material-icons large">computer</i></a></h2>
+          <h5 class="center"><a href="/software-development">Software Development</a></h5>
 
           <p class="light flow-text center-align">Web Design, Javascript, Java (Andriod), SQL &amp; MongoDB.</p>
         </div>
@@ -152,8 +154,8 @@
 
       <div class="col s12 m6">
         <div class="icon-block">
-          <h2 class="center"><a href="{{$.Site.BaseURL}}/creativity"><i class="material-icons large">copyright</i></a></h2>
-          <h5 class="center"><a href="{{$.Site.BaseURL}}/creativity">Creativity</a></h5>
+          <h2 class="center"><a href="/creativity"><i class="material-icons large">copyright</i></a></h2>
+          <h5 class="center"><a href="/creativity">Creativity</a></h5>
 
           <p class="light flow-text center-align">Videography, Photography, Maker (Arduino, Raspberry Pi) &amp; Music.</p>
         </div>
@@ -169,7 +171,7 @@
   <div id="it-featured" class="container">
     <div class="section">
 
-      <h2>Featured Posts</h2>
+      <h2>Blog<a href="/blog"><i class="material-icons">navigate_next</i></h2></a>
       <p class="flow-text text-justify">
         <em>Some ideas (thoughts) that I have put a URL to:</em>
       </p>
@@ -178,9 +180,9 @@
 
       <!-- List the last 2 posts -->
       <div class="row">
-        {{ range first 2 .Data.Pages }}
+        {{ range first 1 .Data.Pages }}
 
-          <div class="col s12 m6">
+          <div class="col s12 m5">
             <a href="{{.Permalink}}" class="white-text">
               <div class="card-panel blog-card valign-wrapper" style="background-image: url({{ .Site.BaseURL }}images/{{ index .Site.Data.images (printf "%s@highres.jpg" .Params.cover) }})">
                   <div>
@@ -192,6 +194,22 @@
           </div>
 
         {{ end }}
+
+        <div class="col s12 m7 blog-card pink">
+          <ul class="it-featured-list blog-card">
+            {{ range first 3 (after 1 .Data.Pages) }}
+              <li class="row valign-wrapper">
+                <div class="col s3 it-featured-list-cover z-depth-1" style="background-image: url({{ .Site.BaseURL }}images/{{ index .Site.Data.images (printf "%s@highres.jpg" .Params.cover) }})">
+                </div>
+
+                <div class="col s9">
+                  <h6 class="black-text truncate it-featured-list-title">{{.Title}}</h6>
+                  <p class="black-text truncate">{{.Params.description}}</p>
+                </div>
+              </li>
+            {{ end }}
+          </ul>
+        </div>
       </div>
 
     </div>

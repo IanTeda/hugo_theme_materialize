@@ -26,8 +26,32 @@
 blockquote {
     font-style: italic;
     margin-left: 60px;
+
+    .no-margin {
+        margin-left: 0;
+    }
 }
 
 .text-justify {
     text-align: justify;
+}
+
+#it-featured{
+    .material-icons {
+        font-size: 3.56rem;
+    }
+}
+
+.it-featured-list {
+    margin: .5rem 0 1rem;
+}
+
+.it-featured-list-cover {
+    height: 84px;
+    background-size: cover; 
+    background-position: top;
+}
+
+.it-featured-list-title {
+    font-weight: bold;
 }
