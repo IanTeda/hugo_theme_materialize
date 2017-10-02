@@ -166,22 +166,22 @@
   <br><br>
 </div>
 
-<!-- Featured products. How have I been adding value -->
+<!-- Featured blog posts. How have I been adding value -->
 <div class="grey lighten-4">
   <div id="it-featured" class="container">
     <div class="section">
 
-      <h2>Blog<a href="/blog"><i class="material-icons">navigate_next</i></h2></a>
+      <h2>Blog<a href="/blog"><i class="material-icons">navigate_next</i></a></h2>
       <p class="flow-text text-justify">
         <em>Some ideas (thoughts) that I have put a URL to recently:</em>
       </p>
       <div class="divider"></div>
       <br>
 
-      <!-- List the last 2 posts -->
+      <!-- List the last post as a feature -->
       <div class="row featured-list">
-        {{ range first 1 .Data.Pages }}
 
+        {{ range first 1 .Data.Pages }}
           <div class="col s12 m5">
             <a href="{{.Permalink}}" class="white-text">
               <div class="card-panel valign-wrapper" style="background-image: url({{ .Site.BaseURL }}images/{{ index .Site.Data.images (printf "%s@highres.jpg" .Params.cover) }})">
@@ -192,9 +192,9 @@
               </div>
             </a>
           </div>
-
         {{ end }}
 
+        <!-- List the next 3 latest posts -->
         <div class="col s12 m7 card-panel grey lighten-4 z-depth-0">
           <ul>
             {{ range first 3 (after 1 .Data.Pages) }}

@@ -3,13 +3,13 @@
         <div class="col s12">
             {{ $url := replace .Permalink ( printf "%s" .Site.BaseURL) "" }}
             {{ $.Scratch.Add "path" .Site.BaseURL }}
-            <a class="breadcrumb" href="/">
-                <i class="material-icons">home</i>
+            <a class="breadcrumb flow-text" href="/">
+                <i class="material-icons flow-text">home</i>
             </a>
             {{ range $index, $element := split $url "/" }}
                 {{ $.Scratch.Add "path" $element }}
                 {{ if ne $element "" }}
-                    <a class="breadcrumb" href='{{ $.Scratch.Get "path" }}'>{{ . }}</a>
+                    <a class="breadcrumb flow-text" href='{{ $.Scratch.Get "path" }}'>{{ . }}</a>
                     {{ $.Scratch.Add "path" "/" }}
                 {{ end }}
             {{ end }}
