@@ -15,4 +15,13 @@ $(document).ready(function() {
         onClose: function(el) { },
     });
 
+    /**
+     * http://brm.io/jquery-match-height/
+     */
+    // apply matchHeight to each item container's items
+    $('.items-container').each(function() {
+        $(this).children('.item').matchHeight({
+            byRow: byRow,
+        });
+    });
 });

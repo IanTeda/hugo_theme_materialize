@@ -133,6 +133,7 @@ module.exports = {
     src: [
       src + 'scripts/jquery.js',
       src + 'scripts/materialize.js',
+      src + 'scripts/jquery.matchHeight.js',
       src + 'scripts/main.js',
     ],
     dest: hstatic,

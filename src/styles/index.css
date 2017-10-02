@@ -36,18 +36,28 @@ blockquote {
     text-align: justify;
 }
 
-#it-featured{
+#it-featured {
     .material-icons {
         font-size: 3.56rem;
     }
-}
 
-.it-featured-list {
-    margin: .5rem 0 1rem;
+    .featured-list {
+        .card-panel {
+            height: 290px;
+        }
+
+        ul {
+            margin: 0px;
+
+            li {
+                margin-bottom: 20px;
+            }
+        }
+    }
 }
 
 .it-featured-list-cover {
-    height: 84px;
+    height: 83px;
     background-size: cover; 
     background-position: top;
 }

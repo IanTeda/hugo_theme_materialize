@@ -19,14 +19,14 @@
     margin-top: 30px;
 }
 
-.blog-card {
+.aspect-ratio {
     div {
         width: 100%;
     }
 }
 
 /* Maintain fluid aspect ratio */
-.blog-card:after {
+.aspect-ration:after {
     content: "";
     display: block;
     padding-bottom: 70%;

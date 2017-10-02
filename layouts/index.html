@@ -173,18 +173,18 @@
 
       <h2>Blog<a href="/blog"><i class="material-icons">navigate_next</i></h2></a>
       <p class="flow-text text-justify">
-        <em>Some ideas (thoughts) that I have put a URL to:</em>
+        <em>Some ideas (thoughts) that I have put a URL to recently:</em>
       </p>
       <div class="divider"></div>
       <br>
 
       <!-- List the last 2 posts -->
-      <div class="row">
+      <div class="row featured-list">
         {{ range first 1 .Data.Pages }}
 
           <div class="col s12 m5">
             <a href="{{.Permalink}}" class="white-text">
-              <div class="card-panel blog-card valign-wrapper" style="background-image: url({{ .Site.BaseURL }}images/{{ index .Site.Data.images (printf "%s@highres.jpg" .Params.cover) }})">
+              <div class="card-panel valign-wrapper" style="background-image: url({{ .Site.BaseURL }}images/{{ index .Site.Data.images (printf "%s@highres.jpg" .Params.cover) }})">
                   <div>
                     <h5 class="center-align">{{.Title}}</h5>
                     <h6 class="center-align">{{.Params.description}}</h6>
@@ -195,18 +195,20 @@
 
         {{ end }}
 
-        <div class="col s12 m7 blog-card pink">
-          <ul class="it-featured-list blog-card">
+        <div class="col s12 m7 card-panel grey lighten-4 z-depth-0">
+          <ul>
             {{ range first 3 (after 1 .Data.Pages) }}
-              <li class="row valign-wrapper">
-                <div class="col s3 it-featured-list-cover z-depth-1" style="background-image: url({{ .Site.BaseURL }}images/{{ index .Site.Data.images (printf "%s@highres.jpg" .Params.cover) }})">
-                </div>
-
-                <div class="col s9">
-                  <h6 class="black-text truncate it-featured-list-title">{{.Title}}</h6>
-                  <p class="black-text truncate">{{.Params.description}}</p>
-                </div>
-              </li>
+              <a href="{{.Permalink}}">
+                <li class="valign-wrapper">
+                  <div class="col s3 it-featured-list-cover z-depth-1" style="background-image: url({{ .Site.BaseURL }}images/{{ index .Site.Data.images (printf "%s@highres.jpg" .Params.cover) }})">
+                  </div>
+  
+                  <div class="col s9">
+                    <h6 class="black-text truncate it-featured-list-title">{{.Title}}</h6>
+                    <p class="black-text truncate">{{.Params.description}}</p>
+                  </div>
+                </li>
+              </a>
             {{ end }}
           </ul>
         </div>
