@@ -1,18 +1,9 @@
-.single-header {
-    height: 55vh;
-    width: 100%;
-    background-size: cover; 
-    background-position: top;
-
-    .valign-wrapper {
-        height: calc(100% - 64px); /** <-- Vertical center div less the navbar 64px */
-    }
-}
-
 .single {
     .related {
         .card-panel {
             height: 289px;
+            background-size: cover; 
+            background-position: top;
 
             ul {
                 margin: 0px;

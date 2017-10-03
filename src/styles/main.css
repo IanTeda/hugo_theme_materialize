@@ -4,12 +4,14 @@
 @import "./materialize-custom";
 
 @import "./helper-breakpoint";
+@import "./header";
 @import "./footer";
 @import "./index";
 @import "./navbar";
 @import "./navside";
 @import "./breadcrumb";
 @import "./single";
+@import "./list";
 
 .uppercase {
     text-transform: uppercase;

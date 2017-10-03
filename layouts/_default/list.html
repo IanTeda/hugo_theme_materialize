@@ -1,0 +1,43 @@
+{{ define "body" }} <!-- Inherit from body block defined in baseof.html -->
+
+  {{ partial "header.html" . }}
+
+  <div class="container list">
+    <div class="row">
+
+      <!-- Page title -->
+      <div class="col s12">
+        <h2>{{ .Title }}</h2>
+      </div>
+
+      <!-- Where am I -->
+      <div class="col s12">
+        {{ partial "breadcrumb.html" . }}
+      </div>
+
+      <!-- Latest post -->
+      {{ range first 2 .Data.Pages }}
+        <div class="col s6 featured">
+          <a href="{{.Permalink}}" class="white-text">
+            <div class="card-panel valign-wrapper aspect-ratio" style="background-image: url({{ .Site.BaseURL }}images/{{ index .Site.Data.images (printf "%s@highres.jpg" .Params.cover) }})">
+              <div>
+                <h5 class="white-text center-align"><a href="{{.Permalink}}">{{.Title}}</a></h5>
+                <h6 class="white-text center-align">{{.Params.description}}</h6>
+              </div>
+            </div>
+          </a>
+        </div>
+      {{ end }}
+          
+          <!-- Ranges through content/post/*.md -->
+          {{ range .Data.Pages }}
+            <li>
+                <a href="{{.Permalink}}">{{.Date.Format "2006-01-02"}} | {{.Title}}</a>
+            </li>
+          {{ end }}
+    </div>
+  </div>
+
+
+
+{{ end }}

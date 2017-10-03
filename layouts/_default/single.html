@@ -1,89 +1,71 @@
-<!DOCTYPE html>
-<html>
+{{ define "body" }} <!-- Inherit from body block defined in baseof.html -->
 
-  <!-- Default Page Head -->
-  {{ partial "head.html" . }}
+  {{ partial "header.html" . }}
+  
+  <div class="container single">
+    <div class="row">
+      <div class="col text-justify">
 
-  <body>
-
-    {{ partial "header.html" . }}
-    
-    <div class="container single">
-      <div class="row">
-        <div class="col text-justify">
-
-          <h2>{{ .Title }} </h2>
-          
-          {{ partial "breadcrumb.html" . }}
-          
-          <div class="flow-text">
-            {{ .Content }}
-          </div>
-          
-          <div class="divider"></div>
-
-            <div class="related">
-              <h4>Related:</h4>
-              <p class="flow-text text-justify">
-                <em>Some other posts if you enjoyed this one:</em>
-              </p>
-
-              {{ $related := .Site.RegularPages.Related . | first 5 }}
-              {{ with $related }}
-
-                <div class="col s12 m5">
-                  {{ range first 1 . }}
-
-                    <a href="{{.Permalink}}" class="white-text">
-                      <div class="card-panel valign-wrapper" style="background-image: url({{ .Site.BaseURL }}images/{{ index .Site.Data.images (printf "%s@highres.jpg" .Params.cover) }})">
-                          <div>
-                            <h5 class="center-align">{{.Title}}</h5>
-                            <h6 class="center-align">{{.Params.description}}</h6>
-                          </div>
-                      </div>
-                    </a>
-                  
-                  {{ end }}
-                </div>
-
-                <div class="col s12 m7 card-panel z-depth-0">
-                  <ul>
-                    {{ range first 3 (after 1 .) }}
-
-                      <a href="{{.Permalink}}">
-                        <li class="valign-wrapper">
-                          <div class="col s3 it-featured-list-cover z-depth-1" style="background-image: url({{ .Site.BaseURL }}images/{{ index .Site.Data.images (printf "%s@highres.jpg" .Params.cover) }})">
-                          </div>
-          
-                          <div class="col s9">
-                            <h6 class="black-text truncate it-featured-list-title">{{.Title}}</h6>
-                            <p class="black-text truncate">{{.Params.description}}</p>
-                          </div>
-                        </li>
-                      </a>
-
-                    {{ end }}
-                  </ul>
-                </div>
-
-              {{ end }}
-
-            </div>
-
+        <h2>{{ .Title }}</h2>
+        
+        {{ partial "breadcrumb.html" . }}
+        
+        <div class="flow-text">
+          {{ .Content }}
         </div>
-      </div>      
-    </div>
+        
+        <div class="divider"></div>
 
-    <!-- Footer -->
-    {{ partial "footer.html" .}}
+          <div class="related">
+            <h4>Related:</h4>
+            <p class="flow-text text-justify">
+              <em>Some other posts if you enjoyed this one:</em>
+            </p>
 
-    <!-- code for localhost only -->
-    {{ if eq (printf "%v" $.Site.BaseURL) "http://localhost:1313/" }}
-      {{ partial "helper-breakpoint.html" . }}
-    {{ end }}
+            {{ $related := .Site.RegularPages.Related . | first 5 }}
+            {{ with $related }}
 
-    <!-- Load themes Javascript file -->
-    <script src='{{ .Site.BaseURL }}{{ index .Site.Data.hash "materialize.min.js" }}'></script>
-  </body>
+              <div class="col s12 m5">
+                {{ range first 1 . }}
 
-  </html>
+                  <a href="{{.Permalink}}" class="white-text">
+                    <div class="card-panel valign-wrapper" style="background-image: url({{ .Site.BaseURL }}images/{{ index .Site.Data.images (printf "%s@highres.jpg" .Params.cover) }})">
+                        <div>
+                          <h5 class="center-align">{{.Title}}</h5>
+                          <h6 class="center-align">{{.Params.description}}</h6>
+                        </div>
+                    </div>
+                  </a>
+                
+                {{ end }}
+              </div>
+
+              <div class="col s12 m7 card-panel z-depth-0">
+                <ul>
+                  {{ range first 3 (after 1 .) }}
+
+                    <a href="{{.Permalink}}">
+                      <li class="valign-wrapper">
+                        <div class="col s3 it-featured-list-cover z-depth-1" style="background-image: url({{ .Site.BaseURL }}images/{{ index .Site.Data.images (printf "%s@highres.jpg" .Params.cover) }})">
+                        </div>
+        
+                        <div class="col s9">
+                          <h6 class="black-text truncate it-featured-list-title">{{.Title}}</h6>
+                          <p class="black-text truncate">{{.Params.description}}</p>
+                        </div>
+                      </li>
+                    </a>
+
+                  {{ end }}
+                </ul>
+              </div>
+
+            {{ end }}
+
+          </div>
+
+      </div>
+    </div>      
+  </div>
+
+{{ end }}
