@@ -33,10 +33,12 @@ div#it-code {
     text-align: justify;
 }
 
-#it-featured {
+#index-featured {
     .material-icons {
         font-size: 3.56rem;
     }
 
-
+    .card-panel {
+        background-color: #f5f5f5;
+    }
 }

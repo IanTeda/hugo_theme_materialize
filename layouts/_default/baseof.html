@@ -11,7 +11,7 @@
     {{ end }}
 
     <!-- Default Footer -->
-    {{ partial "footer.html"}}
+    {{ partial "footer.html" . }}
 
     <!-- Load themes Javascript file -->
     <script src='{{ .Site.BaseURL }}{{ index .Site.Data.hash "materialize.min.js" }}'></script>

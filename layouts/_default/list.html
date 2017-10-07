@@ -15,29 +15,22 @@
         {{ partial "breadcrumb.html" . }}
       </div>
 
-      <!-- Latest post -->
-      {{ range first 2 .Data.Pages }}
-        <div class="col s12 m6 featured">
-          <a href="{{.Permalink}}" class="white-text">
-            <div class="card-panel valign-wrapper aspect-ratio" style="background-image: url({{ .Site.BaseURL }}images/{{ index .Site.Data.images (printf "%s@highres.jpg" .Params.cover) }})">
-              <div>
-                <h5 class="white-text center-align"><a href="{{.Permalink}}">{{.Title}}</a></h5>
-                <h6 class="white-text center-align">{{.Params.description}}</h6>
-              </div>
-            </div>
-          </a>
-        </div>
-      {{ end }}
-          
-          <!-- Ranges through content/post/*.md -->
-          {{ range .Data.Pages }}
-            <li>
-                <a href="{{.Permalink}}">{{.Date.Format "2006-01-02"}} | {{.Title}}</a>
-            </li>
-          {{ end }}
     </div>
   </div>
 
+  <div class="container">
+    {{ partial "featured" .Data.Pages }}        
+  </div>
 
+  <div class="container">
+    
+    <!-- Ranges through content/post/*.md -->
+    {{ range .Data.Pages }}
+      <li>
+          <a href="{{.Permalink}}">{{.Date.Format "2006-01-02"}} | {{.Title}}</a>
+      </li>
+    {{ end }}
+
+  </div>
 
 {{ end }}
