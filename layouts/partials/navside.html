@@ -18,10 +18,10 @@
         </div>
     </li>
     <li><a href="/blog" class="subheader">Blog</a></li>
-    <li><a href="/blog/creativity">Creativity</a></li>
-    <li><a href="/blog/engineering">Engineering</a></li>
-    <li><a href="/blog/project-management">Leadership</a></li>
-    <li><a href="/blog/programming">Programming</a></li>
+
+    {{ range .Site.Menus.categories }}
+        <li><a href="{{ .URL }}">{{ .Name }}</a></li>
+    {{ end }}
     <li>
         <div class="divider"></div>
     </li>

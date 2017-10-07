@@ -10,10 +10,9 @@
             <div class="col l3 s12">
               <h5 class="white-text">Blog Categories</h5>
               <ul>
-                <li><a class="white-text" href="/blog/creativity">Creativity</a></li>
-                <li><a class="white-text" href="/blog/engineering">Engineering</a></li>
-                <li><a class="white-text" href="/blog/project-management">Project Management</a></li>
-                <li><a class="white-text" href="/blog/software-development">Software Development</a></li>
+                {{ range .Site.Menus.categories }}
+                  <li><a class="white-text" href="{{ .URL }}">{{ .Name }}</a></li>
+                {{ end }}
               </ul>
             </div>
             <div class="col l3 s12">
