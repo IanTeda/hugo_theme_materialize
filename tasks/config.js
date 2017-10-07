@@ -48,33 +48,33 @@ module.exports = {
       config: {
         '*': [
           {
-            width: 576,
+            width: 600,
             rename: {
               suffix: '@mobile',
               extname: '.jpg',
             },
-            withoutEnlargement: true,
+            withoutEnlargement: false,
           }, {
-            width: 768,
+            width: 992,
             rename: {
               suffix: '@tablet',
               extname: '.jpg',
             },
-            withoutEnlargement: true,
+            withoutEnlargement: false,
           }, {
-            width: 992,
+            width: 1200,
             rename: {
               suffix: '@desktop',
               extname: '.jpg',
             },
-            withoutEnlargement: true,
+            withoutEnlargement: false,
           }, {
-            width: 1200,
+            width: 2880,
             rename: {
               suffix: '@highres',
               extname: '.jpg',
             },
-            withoutEnlargement: true,
+            withoutEnlargement: false,
           },
         ],
       },

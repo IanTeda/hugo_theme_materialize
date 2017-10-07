@@ -17,7 +17,7 @@
 
       <!-- Latest post -->
       {{ range first 2 .Data.Pages }}
-        <div class="col s6 featured">
+        <div class="col s12 m6 featured">
           <a href="{{.Permalink}}" class="white-text">
             <div class="card-panel valign-wrapper aspect-ratio" style="background-image: url({{ .Site.BaseURL }}images/{{ index .Site.Data.images (printf "%s@highres.jpg" .Params.cover) }})">
               <div>

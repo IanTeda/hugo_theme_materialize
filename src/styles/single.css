@@ -1,27 +1,3 @@
 .single {
-    .related {
-        .card-panel {
-            height: 289px;
-            background-size: cover; 
-            background-position: top;
 
-            ul {
-                margin: 0px;
-
-                li {
-                    margin-bottom: 20px;
-                }
-            }
-            
-            .it-featured-list-cover {
-                height: 83px;
-                background-size: cover; 
-                background-position: top;
-            }
-            
-            .it-featured-list-title {
-                font-weight: bold;
-            }
-        }
-    }
 }

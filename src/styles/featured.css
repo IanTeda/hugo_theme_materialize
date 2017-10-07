@@ -1,0 +1,35 @@
+.featured {
+
+    .featured-main {
+        
+        height: 300px;
+        background-size: cover; 
+        background-position: top;
+        
+    }
+
+    .featured-list {
+        margin: 0px;
+
+        li {
+            margin-bottom: 20px;
+        }
+    
+        .featured-list-cover {
+            height: 83px;
+            width: 100%;
+            padding-left: -0.75rem;
+            padding-right: -0.75rem;
+        }
+
+        .featured-list-cover:after {
+            content: "";
+            display: block;
+            padding-bottom: 70%;
+        }
+    
+        .featured-list-title {
+            font-weight: bold;
+        }
+    }
+}

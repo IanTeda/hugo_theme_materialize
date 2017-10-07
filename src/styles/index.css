@@ -23,12 +23,9 @@
     }
 }
 
-blockquote {
-    font-style: italic;
-    margin-left: 60px;
-
-    .no-margin {
-        margin-left: 0;
+div#it-code {
+    blockquote {
+        margin-left: 0px;
     }
 }
 
@@ -41,27 +38,5 @@ blockquote {
         font-size: 3.56rem;
     }
 
-    .featured-list {
-        .card-panel {
-            height: 290px;
-        }
 
-        ul {
-            margin: 0px;
-
-            li {
-                margin-bottom: 20px;
-            }
-        }
-    }
-}
-
-.it-featured-list-cover {
-    height: 83px;
-    background-size: cover; 
-    background-position: top;
-}
-
-.it-featured-list-title {
-    font-weight: bold;
 }

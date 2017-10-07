@@ -1,0 +1,49 @@
+<div class="row featured">
+<!-- Featured posts, contex passed from parital block -->    
+
+    <!-- First one is big -->
+    {{ range first 1 . }}
+        <div class="col s12 m5">
+            <a href="{{.Permalink}}" class="white-text">
+                <div class="card-panel valign-wrapper featured-main" style="background-image: url({{ .Site.BaseURL }}images/{{ index .Site.Data.images (printf "%s@highres.jpg" .Params.cover) }})">
+                    <div>
+                    <h5 class="center-align">{{.Title}}</h5>
+                    <h6 class="center-align">{{.Params.description}}</h6>
+                    </div>
+                </div>
+            </a>
+        </div>
+    {{ end }}
+
+    <!-- List the next 3 latest posts -->
+    <div class="col s12 m7 card-panel z-depth-0">
+        <ul class="featured-list">
+
+            {{ range first 3 (after 1 .) }}
+                <a href="{{.Permalink}}">
+                    <li class="valign-wrapper">
+                        <div class="col s3">
+                            <img 
+                                class="z-depth-1 featured-list-cover"
+                                width="100%" 
+                                sizes="(max-width: 600px) 10vw, (max-width: 992px) 10vw, (max-width: 1200px) 10vw, (max-width: 2880px) 10vw" 
+                                srcset="
+                                    {{.Site.BaseURL}}images/{{ index .Site.Data.images (printf "%s@mobile.jpg" .Params.cover) }} 600w,
+                                    {{.Site.BaseURL}}images/{{ index .Site.Data.images (printf "%s@tablet.jpg" .Params.cover) }} 992w,
+                                    {{.Site.BaseURL}}images/{{ index .Site.Data.images (printf "%s@desktop.jpg" .Params.cover) }} 1200w,
+                                    {{.Site.BaseURL}}images/{{ index .Site.Data.images (printf "%s@highres.jpg" .Params.cover) }} 2880w" 
+                                alt="Ian Teda head shot">
+                        </div>
+        
+                        <div class="col s9">
+                            <h6 class="black-text truncate featured-list-title">{{.Title}}</h6>
+                            <p class="black-text truncate">{{.Params.description}}</p>
+                        </div>
+                    </li>
+                </a>
+
+            {{ end }}
+        </ul>
+    </div>
+
+</div>

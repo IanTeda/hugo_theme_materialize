@@ -12,6 +12,7 @@
 @import "./breadcrumb";
 @import "./single";
 @import "./list";
+@import "./featured";
 
 .uppercase {
     text-transform: uppercase;
@@ -19,6 +20,15 @@
 
 #single {
     margin-top: 30px;
+}
+
+blockquote {
+    font-style: italic;
+    margin-left: 60px;
+
+    cite {
+        font-weight: bold;
+    }
 }
 
 .aspect-ratio {
