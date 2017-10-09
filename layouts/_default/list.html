@@ -1,36 +1,56 @@
-{{ define "body" }} <!-- Inherit from body block defined in baseof.html -->
+{{ define "body" }}
+<!-- Inherit from body block defined in baseof.html -->
 
-  {{ partial "header.html" . }}
+    {{ partial "header.html" . }}
 
-  <div class="container list">
-    <div class="row">
+    <div class="container list">
+        <div class="row">
 
-      <!-- Page title -->
-      <div class="col s12">
-        <h2>{{ .Title }}</h2>
-      </div>
+            <!-- Page title -->
+            <div class="col s12">
+                <h2>{{ .Title }}</h2>
+            </div>
 
-      <!-- Where am I -->
-      <div class="col s12">
-        {{ partial "breadcrumb.html" . }}
-      </div>
+            <!-- Where am I -->
+            <div class="col s12">
+                {{ partial "breadcrumb.html" . }}
+            </div>
 
+        </div>
     </div>
-  </div>
 
-  <div class="container">
-    {{ partial "featured" .Data.Pages }}        
-  </div>
+    <div class="container list">
+        <div class="row">
+            <ul>
+                {{ range .Data.Pages }}
+                    <li>
+                        <div class="col s12">
+                            <h4><a href="{{ .Permalink }}">{{ .Title }}</a></h4>
+                        </div>
 
-  <div class="container">
-    
-    <!-- Ranges through content/post/*.md -->
-    {{ range .Data.Pages }}
-      <li>
-          <a href="{{.Permalink}}">{{.Date.Format "2006-01-02"}} | {{.Title}}</a>
-      </li>
-    {{ end }}
+                        <div class="col s12 flow-text">
+                            <div class="col s12 m3">
+                                    <img 
+                                        class="z-depth-1 list-blog-cover"
+                                        width="100%" 
+                                        sizes="(max-width: 600px) 100vw, (max-width: 992px) 20vw, (max-width: 1200px) 20vw, (max-width: 2880px) 20vw" 
+                                        srcset="
+                                            {{.Site.BaseURL}}images/{{ index .Site.Data.images (printf "%s@mobile.jpg" .Params.cover) }} 600w,
+                                            {{.Site.BaseURL}}images/{{ index .Site.Data.images (printf "%s@tablet.jpg" .Params.cover) }} 992w,
+                                            {{.Site.BaseURL}}images/{{ index .Site.Data.images (printf "%s@desktop.jpg" .Params.cover) }} 1200w,
+                                            {{.Site.BaseURL}}images/{{ index .Site.Data.images (printf "%s@highres.jpg" .Params.cover) }} 2880w" 
+                                        alt="{{ .Title }}">
+                                </div>
 
-  </div>
+                            {{ .Summary }}
+                            {{ if .Truncated }}
+                                <a href="{{ .Permalink }}">Read More…</a>
+                            {{ end }}
+                        </div>
+                    </li>
+                {{ end }}
+            </ul>
+        </div>
+    </div>
 
 {{ end }}

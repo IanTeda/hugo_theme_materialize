@@ -2,7 +2,7 @@
 
     .featured-main {
         
-        height: 300px;
+        height: 307px;
         background-size: cover; 
         background-position: top;
         
@@ -16,7 +16,7 @@
         }
     
         .featured-list-cover {
-            height: 83px;
+            height: 85px;
             width: 100%;
             padding-left: -0.75rem;
             padding-right: -0.75rem;
@@ -27,9 +27,6 @@
             display: block;
             padding-bottom: 70%;
         }
-    
-        .featured-list-title {
-            font-weight: bold;
-        }
+
     }
 }

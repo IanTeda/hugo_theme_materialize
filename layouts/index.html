@@ -221,7 +221,9 @@
             <div class="divider"></div>
             <br> 
             
-            {{ partial "featured" .Data.Pages }}
+            {{ if gt (len (.Data.Pages)) 3 }}
+              {{ partial "featured" .Data.Pages }}
+            {{ end }}
       </div>
     </div>
   </div>

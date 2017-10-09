@@ -1,4 +1,5 @@
-{{ define "body" }} <!-- Inherit from body block defined in baseof.html -->
+{{ define "body" }} 
+<!-- Inherit from body block defined in baseof.html -->
 
   {{ partial "header.html" . }}
   
@@ -18,13 +19,18 @@
 
           <div class="related">
             <h4>Related:</h4>
-            <p class="flow-text text-justify">
-              <em>Some other posts if you enjoyed this one:</em>
-            </p>
 
-            {{ $related := .Site.RegularPages.Related . | first 5 }}
-
-            {{ partial "featured" $related }}
+            <!-- Need to check length, else you get errors and will not generate -->
+            {{ if gt (len (.Site.RegularPages.Related .)) 6 }}
+              <p class="flow-text text-justify">
+                <em>Some other posts if you enjoyed this one:</em>
+              </p>
+              {{ partial "featured" (.Site.RegularPages.Related . | first 6) }}
+            {{ else }}
+              <p class="flow-text text-justify">
+                <em>Opps, there does not appear to be any related posts:</em>
+              </p>
+            {{ end }}
 
           </div>
 
