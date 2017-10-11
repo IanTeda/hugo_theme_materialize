@@ -1,0 +1,60 @@
+<ul class="pagination">
+
+    <!-- First and Previous Pages -->
+    {{ if .Paginator.First}}
+        <li class="waves-effect">
+            <a href="{{ .Paginator.First.URL }}">
+                <i class="material-icons">skip_previous</i>
+            </a>
+        </li>
+    {{ else }}
+        <li class="disabled">
+            <i class="material-icons">skip_previous</i>
+        </li>
+    {{end}}
+
+
+    {{ if .Paginator.HasPrev }}
+        <li class="waves-effect">
+            <a href="{{ .Paginator.Prev.URL }}">
+                <i class="material-icons">chevron_left</i>
+            </a>
+        </li>
+    {{ else }}
+        <li class="disabled">
+            <i class="material-icons">chevron_left</i>
+        </li>
+    {{end}}
+
+    <!-- Range through page numbers -->
+    {{ range .Paginator.Pagers }}
+        <li {{ if eq . $.Paginator }}class="active"{{ end }}>
+            <a href="{{ .URL }}">{{ .PageNumber }}</a>
+        </li>
+    {{ end }}
+
+    <!-- Next and Last pages -->
+    {{ if .Paginator.HasNext }}
+        <li class="waves-effect">
+            <a href="{{ .Paginator.Next.URL }}">
+                <i class="material-icons">chevron_right</i>
+            </a>
+        </li>
+    {{ else }}
+        <li class="disabled">
+            <i class="material-icons">chevron_right</i>
+        </li>
+    {{ end }}
+    {{ if .Paginator.Last }}
+        <li class="waves-effect">
+            <a href="{{ .Paginator.Last.URL }}">
+                <i class="material-icons">skip_next</i>
+            </a>
+        </li>
+    {{ else }}
+        <li class="disabled">
+            <i class="material-icons">skip_next</i>
+        </li>
+    {{end}}
+
+</ul>
