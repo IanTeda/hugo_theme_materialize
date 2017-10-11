@@ -1,20 +1,12 @@
 <ul class="pagination">
 
     <!-- First and Previous Pages -->
-    {{ if .Paginator.First}}
+    {{ if .Paginator.HasPrev }}
         <li class="waves-effect">
             <a href="{{ .Paginator.First.URL }}">
                 <i class="material-icons">skip_previous</i>
             </a>
         </li>
-    {{ else }}
-        <li class="disabled">
-            <i class="material-icons">skip_previous</i>
-        </li>
-    {{end}}
-
-
-    {{ if .Paginator.HasPrev }}
         <li class="waves-effect">
             <a href="{{ .Paginator.Prev.URL }}">
                 <i class="material-icons">chevron_left</i>
@@ -22,7 +14,14 @@
         </li>
     {{ else }}
         <li class="disabled">
-            <i class="material-icons">chevron_left</i>
+            <a href="#">
+                <i class="material-icons">skip_previous</i>
+            </a>
+        </li>
+        <li class="disabled">
+            <a href="#">
+                <i class="material-icons">chevron_left</i>
+            </a>
         </li>
     {{end}}
 
@@ -40,12 +39,6 @@
                 <i class="material-icons">chevron_right</i>
             </a>
         </li>
-    {{ else }}
-        <li class="disabled">
-            <i class="material-icons">chevron_right</i>
-        </li>
-    {{ end }}
-    {{ if .Paginator.Last }}
         <li class="waves-effect">
             <a href="{{ .Paginator.Last.URL }}">
                 <i class="material-icons">skip_next</i>
@@ -53,8 +46,15 @@
         </li>
     {{ else }}
         <li class="disabled">
-            <i class="material-icons">skip_next</i>
+            <a href="#">
+                <i class="material-icons">chevron_right</i>
+            </a>
         </li>
-    {{end}}
+        <li class="disabled">
+            <a href="#">
+                <i class="material-icons">skip_next</i>
+            </a>
+        </li>
+    {{ end }}
 
 </ul>
