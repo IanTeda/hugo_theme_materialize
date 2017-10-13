@@ -13,6 +13,7 @@
 @import "./single";
 @import "./list";
 @import "./featured";
+@import "./404";
 
 .uppercase {
     text-transform: uppercase;

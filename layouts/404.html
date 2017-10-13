@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+
+  <!-- Default Page Head -->
+  {{ partial "head.html" . }}
+
+  <body>
+    
+    <!-- Header of landing page -->
+    <header id="error-header" 
+    class="valign-wrapper blue z-depth-1"
+    style="background-image: url({{$.Site.BaseURL}}images/{{index $.Site.Data.images "cover-bw-highrise@desktop.jpg"}})">
+    <div class="container">
+      <div class="row">
+        <h1 class="header center white-text"><strong>Error 404</strong></h1>
+
+        <h2 class="header center white-text">Couldn't find what you where looking for?</h2>
+
+        <h3 class="header center white-text"><a  href="/">Head home ...</a></h3>
+
+      </div>
+    </div>
+    </header>
+
+    <!-- Load themes Javascript file -->
+    <script src='{{ .Site.BaseURL }}{{ index .Site.Data.hash "materialize.min.js" }}'></script>
+
+    <!-- code for localhost only -->
+    {{ if eq (printf "%v" $.Site.BaseURL) "http://localhost:1313/" }}
+      {{ partial "helper-breakpoint.html" . }}
+    {{ end }}
+
+  </body>
+
+</html>
