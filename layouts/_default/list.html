@@ -22,7 +22,10 @@
     <div class="container list">
         <div class="row">
             <ul>
+
+                <!-- List relevant pages -->
                 {{ range .Paginator.Pages }}
+
                     <li>
                         <div class="col s12">
                             <h4><a href="{{ .Permalink }}">{{ .Title }}</a></h4>
@@ -35,10 +38,10 @@
                                     width="100%" 
                                     sizes="(max-width: 600px) 100vw, (max-width: 992px) 20vw, (max-width: 1200px) 20vw, (max-width: 2880px) 20vw" 
                                     srcset="
-                                        {{.Site.BaseURL}}images/{{ index .Site.Data.images (printf "%s@mobile.jpg" .Params.cover) }} 600w,
-                                        {{.Site.BaseURL}}images/{{ index .Site.Data.images (printf "%s@tablet.jpg" .Params.cover) }} 992w,
-                                        {{.Site.BaseURL}}images/{{ index .Site.Data.images (printf "%s@desktop.jpg" .Params.cover) }} 1200w,
-                                        {{.Site.BaseURL}}images/{{ index .Site.Data.images (printf "%s@highres.jpg" .Params.cover) }} 2880w" 
+                                        /images/{{ index .Site.Data.images (printf "%s@mobile.jpg" .Params.cover) }} 600w,
+                                        /images/{{ index .Site.Data.images (printf "%s@tablet.jpg" .Params.cover) }} 992w,
+                                        /images/{{ index .Site.Data.images (printf "%s@desktop.jpg" .Params.cover) }} 1200w,
+                                        /images/{{ index .Site.Data.images (printf "%s@highres.jpg" .Params.cover) }} 2880w"
                                     alt="{{ .Title }}">
                             </div>
 
@@ -48,7 +51,9 @@
                             {{ end }}
                         </div>
                     </li>
+
                 {{ end }}
+                
             </ul>
         </div>
     </div>

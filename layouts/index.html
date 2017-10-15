@@ -1,10 +1,10 @@
 {{ define "body" }}
 <!-- Inherit from body block defined in baseof.html -->
 
-<!-- Header of landing page -->
+<!-- Header for landing page -->
 <header id="index-header" 
   class="valign-wrapper blue z-depth-1"
-  style="background-image: url({{ .Site.BaseURL }}images/{{ index .Site.Data.images (printf "%s@desktop.jpg" .Site.Params.indexHeader) }})">
+  style="background-image: url(/images/{{ index .Site.Data.images (printf "%s@desktop.jpg" .Site.Params.indexHeader) }})">
   <div class="container">
     <div class="row">
       <h1 class="header center white-text">IAN<strong> TEDA</strong></h1>
@@ -54,13 +54,13 @@
         that I am proud to tell my boys I have worked on.</p>
 
       <p class="flow-text text-justify">To find out more about my work, checkout my
-        <a href="https://www.linkedin.com/in/ianteda/">LinkedIn Profile
+        <a href="{{ $.Site.Params.linkedin }}">LinkedIn Profile
           <i class="blue-text fa fa-linkedin-square" aria-hidden="true"></i>
         </a>
       </p>
 
       <p class="flow-text text-justify">To find out what I am up to right now, checkout my
-        <a href="now.html">now page</a>.</p>
+        <a href="{{ $.Site.Params.now }}">now page</a>.</p>
     </div>
   </div>
 </div>
@@ -82,10 +82,11 @@
             <div class="col s3">
               <img class="circle z-depth-2 headshot" width="100%" sizes="(max-width: 600px) 30vw, (max-width: 992px) 30vw, (max-width: 1200px) 30vw, (max-width: 2880px) 30vw"
                 srcset="
-                    {{.Site.BaseURL}}images/{{index $.Site.Data.hash "head-shot@mobile.jpg"}} 600w,
-                    {{.Site.BaseURL}}images/{{index $.Site.Data.hash "head-shot@tablet.jpg"}} 992w,
-                    {{.Site.BaseURL}}images/{{index $.Site.Data.hash "head-shot@desktop.jpg"}} 1200w,
-                    {{.Site.BaseURL}}images/{{index $.Site.Data.hash "head-shot@highres.jpg"}} 2880w" alt="Ian Teda head shot">
+                  /images/{{index $.Site.Data.hash "head-shot@mobile.jpg"}} 600w,
+                  /images/{{index $.Site.Data.hash "head-shot@tablet.jpg"}} 992w,
+                  /images/{{index $.Site.Data.hash "head-shot@desktop.jpg"}} 1200w,
+                  /images/{{index $.Site.Data.hash "head-shot@highres.jpg"}} 2880w"
+                alt="Ian Teda head shot">
             </div>
             <div class="col s9">
               <blockquote>
@@ -103,10 +104,11 @@
             <div class="col s8 offset-s2">
               <img class="circle z-depth-2" width="100%" sizes="(max-width: 600px) 30vw, (max-width: 992px) 30vw, (max-width: 1200px) 30vw, (max-width: 2880px) 30vw"
                 srcset="
-                      {{.Site.BaseURL}}images/{{index $.Site.Data.hash "head-shot@mobile.jpg"}} 600w,
-                      {{.Site.BaseURL}}images/{{index $.Site.Data.hash "head-shot@tablet.jpg"}} 992w,
-                      {{.Site.BaseURL}}images/{{index $.Site.Data.hash "head-shot@desktop.jpg"}} 1200w,
-                      {{.Site.BaseURL}}images/{{index $.Site.Data.hash "head-shot@highres.jpg"}} 2880w" alt="Ian Teda head shot">
+                  /images/{{index $.Site.Data.hash "head-shot@mobile.jpg"}} 600w,
+                  /images/{{index $.Site.Data.hash "head-shot@tablet.jpg"}} 992w,
+                  /images/{{index $.Site.Data.hash "head-shot@desktop.jpg"}} 1200w,
+                  /images/{{index $.Site.Data.hash "head-shot@highres.jpg"}} 2880w"
+                alt="Ian Teda head shot">
             </div>
             <div class="col s12">
               <blockquote class="no-margin">

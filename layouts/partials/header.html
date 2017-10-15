@@ -1,7 +1,7 @@
 <header 
   id="single-header"
   class="blue z-depth-1 single-header"
-  style="background-image: url({{ .Site.BaseURL }}images/{{ index .Site.Data.images (printf "%s@desktop.jpg" .Params.cover) }})">
+  style="background-image: url(/images/{{ index .Site.Data.images (printf "%s@desktop.jpg" .Params.cover) }})">
   
   {{ partial "navbar.html" . }}
   
