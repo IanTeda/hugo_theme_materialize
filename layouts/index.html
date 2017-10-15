@@ -4,7 +4,7 @@
 <!-- Header of landing page -->
 <header id="index-header" 
   class="valign-wrapper blue z-depth-1"
-  style="background-image: url({{$.Site.BaseURL}}images/{{index $.Site.Data.hash "cover-intake-profile@desktop.jpg"}})">
+  style="background-image: url({{ .Site.BaseURL }}images/{{ index .Site.Data.images (printf "%s@desktop.jpg" .Site.Params.indexHeader) }})">
   <div class="container">
     <div class="row">
       <h1 class="header center white-text">IAN<strong> TEDA</strong></h1>
