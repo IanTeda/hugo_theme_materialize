@@ -1,48 +1,47 @@
 <head>
     
-        <!-- Page Title -->
-        <title>{{ .Title }}</title>
+    <!-- Page Title -->
+    <title>{{ .Title }}</title>
+
+    <!-- Basic Page Needs -->
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <!-- Mobile Metas -->
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- RSS Feed -->
+    {{ if .RSSLink }}
+        <link rel="feed" href="{{ .RSSLink }}" type="application/rss+xml" title="{{ .Site.Title }}" />
+        <link rel="alternate" href="{{ .RSSLink }}" type="application/rss+xml" title="{{ .Site.Title }}" />
+    {{ end }}
+
+    <!-- Favourite Icon -->
+    <link rel="shortcut icon" href="" >
+
+    <!-- Page Description -->
+    <meta name="description" content="{{ .Description }}" />
+
+    <!-- Page Author -->
+    {{ if .Site.Params.gplus }}
+        <link rel="author" href="https://plus.google.com/+{{ .Site.Params.gplus }}" />
+    {{ end }}
+
+    <link rel="canonical" href="{{ .Permalink }}" />
+
+    <!-- Style Sheets -->
+    <link rel="stylesheet" href='/{{ index .Site.Data.hash "materialize.min.css" }}' type="text/css" property="stylesheet" />
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     
-        <!-- Basic Page Needs -->
-        <meta charset="UTF-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    
-        <!-- Mobile Metas -->
-        <meta name="HandheldFriendly" content="True" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    
-        <!-- RSS Feed -->
-        {{ if .RSSLink }}
-            <link rel="feed" href="{{ .RSSLink }}" type="application/rss+xml" title="{{ .Site.Title }}" />
-            <link rel="alternate" href="{{ .RSSLink }}" type="application/rss+xml" title="{{ .Site.Title }}" />
-        {{ end }}
-    
-        <!-- Favourite Icon -->
-        <link rel="shortcut icon" href="" >
-    
-        <!-- Page Description -->
-        <meta name="description" content="{{ .Description }}" />
-    
-        <!-- Page Author -->
-        {{ if .Site.Params.gplus }}
-            <link rel="author" href="https://plus.google.com/+{{ .Site.Params.gplus }}" />
-        {{ end }}
-    
-        <link rel="canonical" href="{{ .Permalink }}" />
-    
-        <!-- Style Sheets -->
-        <link rel="stylesheet" href='/{{ index .Site.Data.hash "materialize.min.css" }}' type="text/css" property="stylesheet" />
-    
-        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-        
-        <!-- Force HTTPS -->
-    
-        <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-        {{ "<!--[if lt IE 9]>" | safeHTML }}
-            <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-            <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-        {{ "<![endif]-->" | safeHTML }}
-    
-        <!-- Add Google Analytics  -->
-    </head>
+    <!-- Force HTTPS -->
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    {{ "<!--[if lt IE 9]>" | safeHTML }}
+        <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    {{ "<![endif]-->" | safeHTML }}
+
+</head>

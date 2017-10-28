@@ -1,0 +1,12 @@
+<a href="{{ .Get "href" }}" target="_blank">
+    <img 
+    class="z-depth-1 book-cover"
+    width="100%" 
+    sizes="(max-width: 600px) 50vw, (max-width: 992px) 50vw, (max-width: 1200px) 50vw, (max-width: 2880px) 50vw" 
+    srcset="
+        /images/{{ index .Site.Data.images ( printf "%s@mobile.jpg" (.Get "src") ) }} 600w,
+        /images/{{ index .Site.Data.images ( printf "%s@tablet.jpg" (.Get "src") ) }} 992w,
+        /images/{{ index .Site.Data.images ( printf "%s@desktop.jpg" (.Get "src") ) }} 1200w,
+        /images/{{ index .Site.Data.images ( printf "%s@highres.jpg" (.Get "src") ) }} 2880w" 
+    alt="{{ .Get "alt" }}">
+</a>

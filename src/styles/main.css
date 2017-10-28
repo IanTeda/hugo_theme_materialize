@@ -14,6 +14,7 @@
 @import "./list";
 @import "./featured";
 @import "./404";
+@import "./book-cover";
 
 .uppercase {
     text-transform: uppercase;
