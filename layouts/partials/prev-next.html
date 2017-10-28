@@ -1,0 +1,42 @@
+<div class="row prev-next">
+
+    {{ if .Paginator.HasPrev }}
+
+        <div class="col s6 flow-text">
+            <a href="{{ .Paginator.Prev.URL }}" class="valign-wrapper">
+                <i class="medium material-icons">keyboard_arrow_left</i>
+                Prev
+            </a>
+        </div>
+
+    {{ else }}
+
+        <div class="col s6 flow-text disabled">
+            <a href="#" class="valign-wrapper">
+                <i class="medium material-icons">keyboard_arrow_left</i>
+                Prev
+            </a>
+        </div>
+
+    {{ end }}
+
+    {{ if .Paginator.HasNext }}
+
+        <div class="col s6 flow-text">
+            <a href="{{ .Paginator.Next.URL }}" class="valign-wrapper right">
+                Next
+                <i class="medium material-icons">keyboard_arrow_right</i> 
+            </a>
+        </div>
+
+    {{ else }}
+
+        <div class="col s6 flow-text disabled">
+            <a href="#" class="valign-wrapper right">
+                Next
+                <i class="medium material-icons">keyboard_arrow_right</i> 
+            </a>
+        </div>
+
+    {{ end }}
+</div>
