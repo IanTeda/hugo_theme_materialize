@@ -213,20 +213,20 @@
     <div id="index-featured" class="container">
       <div class="row">
         <div class="col s12">
-            <h2>Blog
-                <a href="/blog">
-                  <i class="material-icons">navigate_next</i>
-                </a>
-              </h2>
-              <p class="flow-text text-justify">
-                <em>Some ideas (thoughts) that I have put a URL to recently:</em>
-              </p>
-              <div class="divider"></div>
-              <br> 
-              
-              {{ if gt (len (.Data.Pages)) 3 }}
-                {{ partial "featured" .Data.Pages }}
-              {{ end }}
+            <h2 class="valign-wrapper">Blog
+              <a href="/blog">
+                <i class="material-icons">navigate_next</i>
+              </a>
+            </h2>
+            <p class="flow-text text-justify">
+              <em>Some ideas (thoughts) that I have put a URL to recently:</em>
+            </p>
+            <div class="divider"></div>
+            <br> 
+            
+            {{ if gt (len (.Data.Pages)) 3 }}
+              {{ partial "featured" .Data.Pages }}
+            {{ end }}
         </div>
       </div>
     </div>
