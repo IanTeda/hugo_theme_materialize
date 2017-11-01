@@ -15,27 +15,29 @@
           {{ .Content }}
         </div>
 
-        <div class="divider"></div>        
-
-          <div class="related">
-            <h4>Related:</h4>
-
-            <!-- Need to check length, else you get errors and will not generate -->
-            {{ if gt (len (.Site.RegularPages.Related .)) 6 }}
-              <p class="flow-text text-justify">
-                <em>Some other posts if you enjoyed this one:</em>
-              </p>
-              {{ partial "featured" (.Site.RegularPages.Related . | first 6) }}
-            {{ else }}
-              <p class="flow-text text-justify">
-                <em>Opps, there does not appear to be any related posts.</em>
-              </p>
-            {{ end }}
-
-          </div>
-
       </div>
-    </div>      
+    </div>
+        
+    {{ partial "prev-next.html" . }}
+
+    <div class="row">
+      <div class="col s12 related">
+          <h4>Related:</h4>
+
+          <!-- Need to check length, else you get errors and will not generate -->
+          {{ if gt (len (.Site.RegularPages.Related .)) 6 }}
+            <p class="flow-text text-justify">
+              <em>Some other posts if you enjoyed this one:</em>
+            </p>
+            {{ partial "featured" (.Site.RegularPages.Related . | first 6) }}
+          {{ else }}
+            <p class="flow-text text-justify">
+              <em>Opps, there does not appear to be any related posts.</em>
+            </p>
+          {{ end }}
+
+        </div>
+    </div>    
   </div>
 
 {{ end }}

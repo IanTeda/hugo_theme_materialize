@@ -1,42 +1,25 @@
-<div class="row prev-next">
+<div class="grey lighten-4 row prev-next">
 
-    {{ if .Paginator.HasPrev }}
+    {{ with .PrevInSection }}
 
-        <div class="col s6 flow-text">
-            <a href="{{ .Paginator.Prev.URL }}" class="valign-wrapper">
+        <div class="col s6 flow-text truncate">
+            <a href="{{ .Permalink }}" class="valign-wrapper black-text">
                 <i class="medium material-icons">keyboard_arrow_left</i>
-                Prev
-            </a>
-        </div>
-
-    {{ else }}
-
-        <div class="col s6 flow-text disabled">
-            <a href="#" class="valign-wrapper">
-                <i class="medium material-icons">keyboard_arrow_left</i>
-                Prev
+                {{ .Title }}
             </a>
         </div>
 
     {{ end }}
 
-    {{ if .Paginator.HasNext }}
+    {{ with .NextInSection }}
 
-        <div class="col s6 flow-text">
-            <a href="{{ .Paginator.Next.URL }}" class="valign-wrapper right">
-                Next
-                <i class="medium material-icons">keyboard_arrow_right</i> 
-            </a>
-        </div>
-
-    {{ else }}
-
-        <div class="col s6 flow-text disabled">
-            <a href="#" class="valign-wrapper right">
-                Next
+        <div class="col s6 flow-text truncate">
+            <a href="{{ .Permalink }}" class="valign-wrapper right black-text">
+                {{ .Title }}
                 <i class="medium material-icons">keyboard_arrow_right</i> 
             </a>
         </div>
 
     {{ end }}
+
 </div>
