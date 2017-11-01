@@ -3,15 +3,36 @@
 
   {{ partial "header.html" . }}
   
-  <div class="container single">
+  <div class="container single flow-text">
     <div class="row">
-      <div class="col text-justify">
+      <div class="col s12 text-justify">
 
-        <h2>{{ .Title }}</h2>
+        <h2 class="col m12 l10">{{ .Title }}</h2>
+        <h2 class="col l2 hide-on-med-and-down">
+          {{ with .PrevInSection }}
+          
+            <div class="col s6 flow-text">
+                <a href="{{ .Permalink }}" title="Previous" class="valign-wrapper black-text">
+                    <i class="medium material-icons">keyboard_arrow_left</i>
+                </a>
+            </div>
+          
+          {{ end }}
+          
+          {{ with .NextInSection }}
+      
+            <div class="col s6 flow-text">
+                <a href="{{ .Permalink }}" title="next" class="valign-wrapper right black-text">
+                    <i class="medium material-icons">keyboard_arrow_right</i> 
+                </a>
+            </div>
+      
+          {{ end }} 
+        </h2>
         
         {{ partial "breadcrumb.html" . }}
         
-        <div class="s12 flow-text text-justify">
+        <div class="col s12 flow-text text-justify">
           {{ .Content }}
         </div>
 
@@ -22,7 +43,7 @@
 
     <div class="row">
       <div class="col s12 related">
-          <h4>Related:</h4>
+          <h3>Related:</h3>
 
           <!-- Need to check length, else you get errors and will not generate -->
           {{ if gt (len (.Site.RegularPages.Related .)) 6 }}

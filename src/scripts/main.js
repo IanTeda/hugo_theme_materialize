@@ -24,4 +24,11 @@ $(document).ready(function() {
             byRow: byRow,
         });
     });
+
+    /**
+     * Add target="blank" to external links
+     */
+    $(document.links).filter(function() {
+        return this.hostname != window.location.hostname;
+    }).attr('target', '_blank');
 });

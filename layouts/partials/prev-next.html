@@ -3,7 +3,7 @@
     {{ with .PrevInSection }}
 
         <div class="col s6 flow-text truncate">
-            <a href="{{ .Permalink }}" class="valign-wrapper black-text">
+            <a href="{{ .Permalink }}" title="Previous" class="valign-wrapper black-text">
                 <i class="medium material-icons">keyboard_arrow_left</i>
                 {{ .Title }}
             </a>
@@ -14,7 +14,7 @@
     {{ with .NextInSection }}
 
         <div class="col s6 flow-text truncate">
-            <a href="{{ .Permalink }}" class="valign-wrapper right black-text">
+            <a href="{{ .Permalink }}" title="Next" class="valign-wrapper right black-text">
                 {{ .Title }}
                 <i class="medium material-icons">keyboard_arrow_right</i> 
             </a>
