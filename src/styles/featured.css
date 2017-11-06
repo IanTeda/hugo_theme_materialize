@@ -2,7 +2,7 @@
 
     .featured-main {
         
-        height: 307px;
+        height: 312px;
         background-size: cover; 
         background-position: top;
         
@@ -16,7 +16,7 @@
         }
     
         .featured-list-cover {
-            height: 85px;
+            height: 84px;
             width: 100%;
             padding-left: -0.75rem;
             padding-right: -0.75rem;
@@ -29,4 +29,15 @@
         }
 
     }
+
+    ul {  
+        &:not(.browser-default) {
+          padding-left: 0;
+          list-style-type: none;
+      
+          & > li {
+            list-style-type: none;
+          }
+        }
+      }
 }

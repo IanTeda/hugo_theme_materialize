@@ -3,7 +3,7 @@
 
   <!-- Header for landing page -->
   <header id="index-header" 
-    class="valign-wrapper blue z-depth-1 flow-text"
+    class="valign-wrapper z-depth-1 flow-text"
     style="background-image: url(images/{{ index .Site.Data.images (printf "%s@desktop.jpg" .Site.Params.indexHeader) }})">
     <div class="container">
       <div class="row">
@@ -55,7 +55,7 @@
 
         <p class="flow-text text-justify">To find out more about my work, checkout my
           <a href="{{ $.Site.Params.linkedin }}">LinkedIn Profile
-            <i class="blue-text fa fa-linkedin-square" aria-hidden="true"></i>
+            <i class="fa fa-linkedin-square" aria-hidden="true"></i>
           </a>
         </p>
 
@@ -257,7 +257,7 @@
               <input id="icon_telephone" type="email" class="validate">
               <label for="icon_telephone">Email</label>
             </div>
-            <a class="waves-effect waves-light btn col s12 m2 blue">
+            <a class="waves-effect waves-light btn col s12 m2">
               <i class="material-icons left">send</i>send</a>
           </div>
         </form>

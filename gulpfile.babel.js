@@ -133,6 +133,13 @@ gulp.task(
   )
 );
 
+gulp.task(
+  'sass',
+  requireTask(
+    'sass'
+  )
+);
+
 
 /**
  * SCRIPT TASKS

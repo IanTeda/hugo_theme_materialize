@@ -1,5 +1,5 @@
 <ul id="navside" class="side-nav">
-    <li class=" blue accent-1">
+    <li class="grey accent-1">
         <div class="user-view center-align">
             <a href="/">
                 <img 
@@ -17,15 +17,14 @@
             <a href="{{ $.Site.Params.email }}"><span class="white-text email">{{ .Site.Params.email }}</span></a>
         </div>
     </li>
+
     <li><a href="/blog" class="subheader">Blog</a></li>
 
     {{ range .Site.Menus.categories }}
         <li><a href="{{ .URL }}">{{ .Name }}</a></li>
     {{ end }}
-    <li>
-        <div class="divider"></div>
-    </li>
+    <li><div class="divider"></div></li>
     <li><a class="subheader">Pages</a></li>
     <li><a href="{{ $.Site.Params.now }}">Now</a></li>
-    <li><a href="/engineering-rule-book/">Engineering Rule Book</a></li>
+    <li><a href="/series/the-engineering-rule-book/">Engineering Rule Book</a></li>
 </ul>
