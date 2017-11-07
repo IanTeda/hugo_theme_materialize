@@ -4,8 +4,12 @@
         margin-bottom: 0px; /** Grid row adds 20px to the bottom, lets get ride of it */
     }
 
-    #autocomplete-input {
-        margin-bottom: 0;
+}
+
+.page-footer {
+
+    .input-field {
+        padding-right: 70px;
     }
 
 }
