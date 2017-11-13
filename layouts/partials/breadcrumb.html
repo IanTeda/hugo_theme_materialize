@@ -11,7 +11,7 @@
             {{ range $index, $element := split $url "/" }}
                 {{ $.Scratch.Add "path" $element }}
                 {{ if ne $element "" }}
-                    <a class="breadcrumb flow-text" href='{{ $.Scratch.Get "path" }}'>{{ . }}</a>
+                    <a class="breadcrumb flow-text" href='{{ $.Scratch.Get "path" }}/'>{{ . }}</a>
                     {{ $.Scratch.Add "path" "/" }}
                 {{ end }}
             {{ end }}

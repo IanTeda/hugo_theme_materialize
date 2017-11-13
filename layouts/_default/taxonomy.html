@@ -45,10 +45,8 @@
                                     alt="{{ .Title }}">
                             </div>
 
-                            {{ if .Params.expert }}
-                                {{ .Params.expert }}
-                            {{ else }}
-                                {{ .Params.description }}
+                            {{ if .Summary }}
+                                {{ .Summary }}
                             {{ end }}
                             
                             {{ if .Truncated }}
