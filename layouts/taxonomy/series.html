@@ -1,0 +1,42 @@
+{{ define "body" }}
+<!-- Inherit from body block defined in baseof.html -->
+
+    {{ partial "header.html" . }}
+
+    <div class="container series flow-text">
+        <div class="row">
+
+            <!-- Page title -->
+            <div class="col s12">
+                <h2>{{ .Title }}</h2>
+            </div>
+
+            <!-- Where am I -->
+            <div class="col s12">
+                {{ partial "breadcrumb.html" . }}
+            </div>
+
+            <div class="col s12">
+                <h3>Forward</h3>
+                <p>{{ .Params.forward }}</p>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="container series flow-text">
+        <div class="row">
+            <ul class="collection with-header">
+                <li class="collection-header">
+                    <h3>Table of Contents</h3>
+                </li>
+                {{ range .Data.Pages.ByDate }}
+                    <li class="collection-item">
+                        <a href="{{ .Permalink }}" title="{{ .Params.description }}">{{ .Title }}</a>
+                    </li>
+                {{ end }}
+            </ul>
+        </div>
+    </div>
+
+{{ end }}
