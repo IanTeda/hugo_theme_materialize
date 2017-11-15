@@ -16,16 +16,6 @@ $(document).ready(function() {
     });
 
     /**
-     * http://brm.io/jquery-match-height/
-     */
-    // apply matchHeight to each item container's items
-    $('.items-container').each(function() {
-        $(this).children('.item').matchHeight({
-            byRow: byRow,
-        });
-    });
-
-    /**
      * Add target="blank" to external links
      */
     $(document.links).filter(function() {
