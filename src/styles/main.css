@@ -16,6 +16,7 @@
 @import "./404";
 @import "./book-cover";
 @import "./prev-next";
+@import "./blockquote";
 
 .uppercase {
     text-transform: uppercase;
@@ -23,15 +24,6 @@
 
 #single {
     margin-top: 30px;
-}
-
-blockquote {
-    font-style: italic;
-    margin-left: 60px;
-
-    cite {
-        font-weight: bold;
-    }
 }
 
 .aspect-ratio {

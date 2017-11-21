@@ -1,0 +1,12 @@
+<blockquote 
+    {{ if .Get "src"}}
+        cite="{{ .Get "src" }}"
+    {{ end }}
+>
+    <p>{{ .Get "quote" }}</p>
+
+    {{ if .Get "author"}}
+        <cite>{{ .Get "author" }}</cite>
+    {{ end }}
+    
+</blockquote>
