@@ -26,5 +26,7 @@
     <li><div class="divider"></div></li>
     <li><a class="subheader">Pages</a></li>
     <li><a href="{{ $.Site.Params.now }}">Now</a></li>
-    <li><a href="/series/the-engineering-rule-book/">Engineering Rule Book</a></li>
+    {{ range .Site.Menus.series }}
+        <li><a href="{{ .URL }}">{{ .Name }}</a></li>
+    {{ end }}
 </ul>

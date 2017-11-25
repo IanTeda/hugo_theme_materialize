@@ -20,7 +20,9 @@
           <h5 class="white-text">Pages</h5>
           <ul>
             <li><a class="white-text" href="{{ $.Site.Params.now }}">Now</a></li>
-            <li><a class="white-text" href="/series/the-engineering-rule-book/">Engineering Rule Book</a></li>
+            {{ range .Site.Menus.series }}
+              <li><a class="white-text" href="{{ .URL }}">{{ .Name }}</a></li>
+            {{ end }}
           </ul>
         </div>
 
