@@ -4,6 +4,10 @@
     background-size: cover; 
     background-position: top;
 
+    .valign-wrapper  {
+        height: calc(100% - 64px); /** <-- Vertical **/
+    }
+
     h1 {
         margin: auto;
     }

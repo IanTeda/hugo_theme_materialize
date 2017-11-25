@@ -3,34 +3,40 @@
 
     <!-- Header for landing page -->
     <header id="index-header" 
-    class="valign-wrapper z-depth-1 flow-text"
+    class="z-depth-1 flow-text"
     style="background-image: url(images/{{ index .Site.Data.images (printf "%s@desktop.jpg" .Site.Params.indexHeader) }})">
-    
+
+      {{ partial "navbar.html" . }}  
+
+      <div class="valign-wrapper">
+
         <div class="container">
-            <div class="row">
-            <h1 class="header center white-text">IAN<strong> TEDA</strong></h1>
+          <div class="row  center">
+            <h1 class="header white-text">IAN<strong> TEDA</strong></h1>
 
             <nav class="transparent nav-center z-depth-0">
                 <div class="nav-wrapper">
-                <ul id="" class="">
-                    <li>
-                    <a href="#about">About</a>
-                    </li>
-                    <li>
-                    <a href="#code">Code</a>
-                    </li>
-                    <li>
-                    <a href="#skills">Skills</a>
-                    </li>
-                    <li>
-                    <a href="#blog">Blog</a>
-                    </li>
-                </ul>
+                  <ul id="" class="">
+                      <li>
+                      <a href="#about">About</a>
+                      </li>
+                      <li>
+                      <a href="#code">Code</a>
+                      </li>
+                      <li>
+                      <a href="#skills">Skills</a>
+                      </li>
+                      <li>
+                      <a href="#blog">Blog</a>
+                      </li>
+                  </ul>
                 </div>
             </nav>
 
-            </div>
+          </div>
         </div>
+
+      </div>
     </header>
 
     <!-- All about Ian Teda, the elevator pitch -->
