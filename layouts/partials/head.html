@@ -4,7 +4,7 @@
     <title>Ian Teda | {{if .IsHome}}{{ $.Site.Params.tagLine }}{{else}}{{.Title}}{{end}} {{if .Type}}[{{.Type}}]{{end}}</title>
 
     <!-- Page Description -->
-    <meta name="description" content="{{if .IsHome}}{{$.Site.Params.description}}{{else}}{{.Description}}{{end}}" />
+    <meta name="description" content="{{if .IsHome}}{{$.Site.Params.description}}{{else}}{{.Params.excerpt}}{{end}}" />
 
     <base href="{{$.Site.BaseURL}}">
 

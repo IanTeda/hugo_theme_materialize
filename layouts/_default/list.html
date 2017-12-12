@@ -7,8 +7,9 @@
         <div class="row">
 
             <!-- Page title -->
-            <div class="col s12">
+            <div class="col s12 flow-text">
                 <h3>{{ .Title }}</h3>
+                <p>{{ .Params.excerpt }}</p>
             </div>
 
             <!-- Where am I -->
@@ -28,7 +29,7 @@
 
                     <li>
                         <div class="col s12">
-                            <h4><a href="{{ .Permalink }}">{{ .Title }}</a></h4>
+                            <h4><a href="{{ .Permalink }}">{{ .Title }} [{{ .Type }}]</a></h4>
                         </div>
 
                         <div class="col s12 flow-text">

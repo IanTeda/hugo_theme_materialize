@@ -17,6 +17,7 @@
 @import "./book-cover";
 @import "./prev-next";
 @import "./blockquote";
+@import "./video-image";
 
 .uppercase {
     text-transform: uppercase;
