@@ -31,7 +31,7 @@
                 </li>
                 {{ range .Data.Pages.ByDate }}
                     <li class="collection-item">
-                        <a href="{{ .Permalink }}" title="{{ .Params.description }}">{{ .Title }}</a>
+                        <a href="{{ .Permalink }}" title="{{ .Params.description }}">{{ .Title }} [{{ .Type }}]</a>
                     </li>
                 {{ end }}
             </ul>
