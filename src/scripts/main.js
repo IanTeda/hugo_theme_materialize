@@ -15,6 +15,8 @@ $(document).ready(function() {
         onClose: function(el) { },
     });
 
+    $('.materialboxed').materialbox();
+
     /**
      * Add target="blank" to external links
      */

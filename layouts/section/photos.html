@@ -1,0 +1,59 @@
+{{ define "body" }}
+<!-- Inherit from body block defined in baseof.html -->
+
+    {{ partial "header-video.html" . }}
+
+    <div class="container list flow-text">
+        <div class="row">
+
+            <!-- Page title -->
+            <div class="col s12">
+                <h3>{{ .Title }}</h3>
+            </div>
+
+            <!-- Where am I -->
+            <div class="col s12">
+                {{ partial "breadcrumb.html" . }}
+            </div>
+
+        </div>
+    </div>
+
+    <div class="container list">
+        <div class="row">
+
+                <!-- List relevant pages -->
+                {{ range $.Site.Data.photos_list}}
+                    {{ $img := . }}
+
+                    <div class="col s4">
+                        <p>
+                            <img 
+                            class="z-depth-1 materialboxed"
+                            width="100%" 
+                            sizes="(max-width: 600px) 100vw, (max-width: 992px) 100vw, (max-width: 1200px) 100vw, (max-width: 2880px) 100vw" 
+                            srcset="
+                                /photos/{{ index $.Site.Data.photos_hash ( printf "%s@mobile.jpg" $img )}} 600w,
+                                /photos/{{ index $.Site.Data.photos_hash ( printf "%s@tablet.jpg" $img )}} 992w,
+                                /photos/{{ index $.Site.Data.photos_hash ( printf "%s@desktop.jpg" $img )}} 1200w,
+                                /photos/{{ index $.Site.Data.photos_hash ( printf "%s@highres.jpg" $img )}} 2880w" 
+                            alt="{{ $img }}">
+                        </p>
+                    </div>
+
+                {{ end }}
+                
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col s12 center-align">
+                {{ if gt .Paginator.TotalPages 1 }}
+                    {{ partial "pagination.html" . }}
+                {{ end }}
+            </div>
+        </div>
+    </div>
+
+{{ end }}

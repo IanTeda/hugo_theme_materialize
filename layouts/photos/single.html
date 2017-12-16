@@ -1,0 +1,86 @@
+{{ define "body" }} 
+<!-- Inherit from body block defined in baseof.html -->
+
+  {{ partial "header-video.html" . }}
+
+  <div class="container single flow-text">
+    <div class="row">
+        <div class="col s12 text-justify">
+            <div class="video-container">
+                Photos
+            </div>
+        </div>
+
+        <h3 class="col m12 l10">{{ .Title }}</h3>
+
+        <div class="col s12 text-justify">
+            {{ .Params.excerpt }}
+        </div>
+
+    </div>
+
+    <div class="row">
+        {{ partial "breadcrumb.html" . }}        
+    </div>
+
+    <div class="row">
+        <div class="divider col s12"></div>            
+    </div>
+
+    <div class="row hide-on-small-only">
+        <h4>Other Videos:</h4>
+
+        {{ range first 6 (where .Site.Pages "Params.type" "video") }}
+
+            <a href="{{.Permalink}}" class="white-text col m6">
+                <div 
+                    class="video-image valign-wrapper"
+                    style="background-image: url(/images/{{ index .Site.Data.images (printf "%s@mobile.jpg" .Params.cover) }})">
+                    <div style="width:100%">
+                        <h4 class="center-align">{{.Title}}</h4>
+                        <h6 class="center-align">{{.Params.description}}</h6>
+                    </div>
+                </div>
+            </a>
+
+        {{ end }}
+    </div>
+
+    <div class="row hide-on-med-and-up">
+        <h4>Other Videos:</h4>
+    </div>
+    {{ range first 6 (where .Site.Pages "Params.type" "video") }}
+        <div class="row hide-on-med-and-up">
+
+            <a href="{{.Permalink}}" class="white-text col s12">
+                <div 
+                    class="video-image valign-wrapper"
+                    style="background-image: url(/images/{{ index .Site.Data.images (printf "%s@mobile.jpg" .Params.cover) }})">
+                    <div style="width:100%">
+                        <h4 class="center-align">{{.Title}}</h4>
+                        <h6 class="center-align">{{.Params.description}}</h6>
+                    </div>
+                </div>
+            </a>
+
+        </div>
+    {{ end }}
+
+    <div class="row">
+            <div class="divider col s12"></div>            
+    </div>
+    
+    <div class="row">
+      <div class="col s12">
+        <h3 id="it-featured">Email List</h3>
+        <p class="flow-text text-justify">
+          <em>Keep up date with the latest happenings:</em>
+        </p>
+        
+        {{ partial "mailchimp.html" . }}     
+      </div>
+    </div>
+
+  </div>
+
+{{ end }}
