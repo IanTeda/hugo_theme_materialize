@@ -1,7 +1,7 @@
 {{ define "body" }}
 <!-- Inherit from body block defined in baseof.html -->
 
-    {{ partial "header.html" . }}
+{{ partial "header-video.html" . }}
 
     <div class="container list flow-text">
         <div class="row">
@@ -9,7 +9,6 @@
             <!-- Page title -->
             <div class="col s12">
                 <h3>{{ .Title }}</h3>
-                <p>{{ .Params.excerpt }}</p>
             </div>
 
             <!-- Where am I -->
@@ -21,42 +20,27 @@
     </div>
 
     <div class="container list">
-        <div class="row hide-on-small-only">
+        <div class="row">
 
                 <!-- List relevant pages -->
                 {{ range .Paginator.Pages }}
-
-                    <a href="{{.Permalink}}" class="white-text col m6">
-                        <div 
-                            class="video-image valign-wrapper"
-                            style="background-image: url(/images/{{ index .Site.Data.images (printf "%s@mobile.jpg" .Params.cover) }})">
-                            <div style="width:100%">
-                                <h4 class="center-align">{{.Title}}</h4>
-                                <h6 class="center-align">{{.Params.description}}</h6>
-                            </div>
-                        </div>
-                    </a>
-
+                    <div class="col s12 m6">
+                        <p>
+                            <a style="width:100%" href="{{.Permalink}}" class="white-text">
+                                <div 
+                                    class="video-image valign-wrapper"
+                                    style="background-image: url(/images/{{ index .Site.Data.images (printf "%s@mobile.jpg" .Params.cover) }})">
+                                    <div>
+                                        <h4 class="center-align">{{.Title}}</h4>
+                                        <h6 class="center-align">{{.Params.description}}</h6>
+                                    </div>
+                                </div>
+                            </a>
+                        </p>
+                    </div>
                 {{ end }}
                 
         </div>
-
-        {{ range .Paginator.Pages }}
-            <div class="row hide-on-med-and-up">
-                    
-                <a href="{{.Permalink}}" class="white-text col s12">
-                    <div 
-                        class="video-image valign-wrapper"
-                        style="background-image: url(/images/{{ index .Site.Data.images (printf "%s@mobile.jpg" .Params.cover) }})">
-                        <div style="width:100%">
-                            <h4 class="center-align">{{.Title}}</h4>
-                            <h6 class="center-align">{{.Params.description}}</h6>
-                        </div>
-                    </div>
-                </a>
-                    
-            </div>
-        {{ end }}
     </div>
 
     <div class="container">
