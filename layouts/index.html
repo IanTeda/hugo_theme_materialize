@@ -234,10 +234,8 @@
                     <p class="flow-text text-justify">
                         <em>Some ideas (thoughts) that I have put a URL to recently:</em>
                     </p>
-                    <div class="divider"></div>
-                    <br> 
                     
-                    {{ if gt (len (.Data.Pages)) 3 }}
+                    {{ if gt (len (.Data.Pages)) 4 }}
                         {{ partial "featured" .Data.Pages }}
                     {{ end }}
                 </div>

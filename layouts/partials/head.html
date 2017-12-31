@@ -6,6 +6,9 @@
     <!-- Page Description -->
     <meta name="description" content="{{ if .IsHome }}{{ $.Site.Params.description }} {{ else }}{{ .Params.excerpt }}{{ end }}" />
 
+    <!-- Meta keywords, not what they used to be -->
+    <meta name="keyword" content="{{ if .IsHome }}{{ $.Site.Params.tagLine }} {{ else }}{{ range .Params.tags }}{{ . }}, {{end}} {{ end }}">
+
     <base href="{{$.Site.BaseURL}}">
 
     <!-- Basic Page Needs -->
@@ -30,6 +33,7 @@
         <link rel="author" href="https://plus.google.com/+{{ .Site.Params.gplus }}" />
     {{ end }}
 
+    <!-- Complete canonical link for website -->
     <link rel="canonical" href="{{ .Permalink }}" />
 
     <!-- Style Sheets -->
