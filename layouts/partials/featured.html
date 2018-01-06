@@ -30,7 +30,8 @@
                             <img 
                                 class="z-depth-1 featured-list-cover responsive-img"
                                 width="100%" 
-                                sizes="(max-width: 600px) 10vw, (max-width: 992px) 10vw, (max-width: 1200px) 10vw, (max-width: 2880px) 10vw" 
+                                sizes="(max-width: 600px) 10vw, (max-width: 992px) 10vw, (max-width: 1200px) 10vw, (max-width: 2880px) 10vw"
+                                src="/images/{{ index .Site.Data.images (printf "%s@mobile.jpg" .Params.cover) }}" 
                                 srcset="
                                     /images/{{ index .Site.Data.images (printf "%s@mobile.jpg" .Params.cover) }} 600w,
                                     /images/{{ index .Site.Data.images (printf "%s@tablet.jpg" .Params.cover) }} 992w,

@@ -2,7 +2,8 @@
     <img 
     class="z-depth-1 {{ .Get "class" }}"
     width="{{ .Get "width" }}" 
-    sizes="(max-width: 600px) 100vw, (max-width: 992px) 100vw, (max-width: 1200px) 100vw, (max-width: 2880px) 100vw" 
+    sizes="(max-width: 600px) 100vw, (max-width: 992px) 100vw, (max-width: 1200px) 100vw, (max-width: 2880px) 100vw"
+    src="/images/{{ index .Site.Data.images ( printf "%s@desktop.jpg" (.Get "src") ) }}" 
     srcset="
         /images/{{ index .Site.Data.images ( printf "%s@mobile.jpg" (.Get "src") ) }} 600w,
         /images/{{ index .Site.Data.images ( printf "%s@tablet.jpg" (.Get "src") ) }} 992w,

@@ -5,7 +5,8 @@
                 <img 
                     class="circle z-depth-2"
                     width="100%" 
-                    sizes="(min-width: 36em) 576w, 768w, 992w, 1200w" 
+                    sizes="(max-width: 600px) 10vw, (max-width: 992px) 10vw, (max-width: 1200px) 10vw, (max-width: 2880px) 10vw" 
+                    src="/images/{{index $.Site.Data.hash "head-shot@mobile.jpg"}} "
                     srcset="
                         /images/{{index $.Site.Data.hash "head-shot@mobile.jpg"}} 576w,
                         /images/{{index $.Site.Data.hash "head-shot@tablet.jpg"}} 768w,
