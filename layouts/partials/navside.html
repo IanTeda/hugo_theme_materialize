@@ -6,12 +6,12 @@
                     class="circle z-depth-2"
                     width="100%" 
                     sizes="(max-width: 600px) 10vw, (max-width: 992px) 10vw, (max-width: 1200px) 10vw, (max-width: 2880px) 10vw" 
-                    src="/images/{{index $.Site.Data.hash "head-shot@mobile.jpg"}} "
+                    src="/images/{{index $.Site.Data.images "head-shot@mobile.jpg"}} "
                     srcset="
-                        /images/{{index $.Site.Data.hash "head-shot@mobile.jpg"}} 576w,
-                        /images/{{index $.Site.Data.hash "head-shot@tablet.jpg"}} 768w,
-                        /images/{{index $.Site.Data.hash "head-shot@desktop.jpg"}} 992w,
-                        /images/{{index $.Site.Data.hash "head-shot@highres.jpg"}} 1200w"
+                        /images/{{index $.Site.Data.images "head-shot@mobile.jpg"}} 576w,
+                        /images/{{index $.Site.Data.images "head-shot@tablet.jpg"}} 768w,
+                        /images/{{index $.Site.Data.images "head-shot@desktop.jpg"}} 992w,
+                        /images/{{index $.Site.Data.images "head-shot@highres.jpg"}} 1200w"
                     alt="Ian Teda head shot">
             </a>
             <a href="{{ $.Site.Params.now }}"><span class="white-text name">{{ .Site.Params.author }}</span></a>
