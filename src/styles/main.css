@@ -27,6 +27,19 @@
     margin-top: 30px;
 }
 
+/* Maintain fluid aspect ratio 3:2 */
+.aspect-ratio-32 {
+    div {
+        width: 100%;
+    }
+}
+
+.aspect-ration-32:after {
+    content: "";
+    display: block;
+    padding-bottom: calc(100% / 3 * 2);
+}
+
 .aspect-ratio {
     div {
         width: 100%;

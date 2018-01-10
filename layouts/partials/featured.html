@@ -1,54 +1,30 @@
 <div class="row featured">
-<!-- Featured posts, contex passed from parital block -->    
+<!-- Featured posts, contex (posts to be featured) passed from parital block -->
 
-    <!-- First one is big -->
-    {{ range first 1 . }}
-
-        <div class="col s12 m5">
-            <a href="{{.Permalink}}" class="white-text">
-                <div 
-                    class="card-panel valign-wrapper featured-main"
-                    style="background-image: url(/images/{{ index .Site.Data.images (printf "%s@mobile.jpg" .Params.cover) }})">
-                    <div style="width:100%">
-                        <h4 class="center-align">{{.Title}}</h4>
-                        <h6 class="center-align">{{.Params.description}}</h6>
-                    </div>
+        {{ range first 3 . }}
+            <div class="col m4 s12">
+                <a href="{{ .Permalink }}">
+                    <img 
+                        class="z-depth-1 aspect-ration-32"
+                        width="100%" 
+                        sizes="(max-width: 600px) 100vw, (max-width: 992px) 30vw, (max-width: 1200px) 30vw, (max-width: 2880px) 30vw"
+                        src="/images/{{ index .Site.Data.images (printf "%s@mobile.jpg" .Params.cover) }}" 
+                        srcset="
+                            /images/{{ index .Site.Data.images (printf "%s@mobile.jpg" .Params.cover) }} 600w,
+                            /images/{{ index .Site.Data.images (printf "%s@tablet.jpg" .Params.cover) }} 992w,
+                            /images/{{ index .Site.Data.images (printf "%s@desktop.jpg" .Params.cover) }} 1200w,
+                            /images/{{ index .Site.Data.images (printf "%s@highres.jpg" .Params.cover) }} 2880w" 
+                        alt="{{ .Title }}">
+                </a>
+                
+                <div class="text-overlay">
+                    <h5><a href="{{ .Permalink }}">{{ .Title }}</a></h5>
+                    <p class="flow-text">{{.Params.description}}</p>
                 </div>
-            </a>
-        </div>
 
-    {{ end }}
-
-    <!-- List the next 3 latest posts -->
-    <div class="col s12 m7 card-panel z-depth-0">
-        <ul class="featured-list">
-
-            {{ range after 1 (first 4  . ) }}
-                <li class="row">
-                    <div class="col s3">
-                        <a href="{{ .Permalink }}">
-                            <img 
-                                class="z-depth-1 featured-list-cover responsive-img"
-                                width="100%" 
-                                sizes="(max-width: 600px) 10vw, (max-width: 992px) 10vw, (max-width: 1200px) 10vw, (max-width: 2880px) 10vw"
-                                src="/images/{{ index .Site.Data.images (printf "%s@mobile.jpg" .Params.cover) }}" 
-                                srcset="
-                                    /images/{{ index .Site.Data.images (printf "%s@mobile.jpg" .Params.cover) }} 600w,
-                                    /images/{{ index .Site.Data.images (printf "%s@tablet.jpg" .Params.cover) }} 992w,
-                                    /images/{{ index .Site.Data.images (printf "%s@desktop.jpg" .Params.cover) }} 1200w,
-                                    /images/{{ index .Site.Data.images (printf "%s@highres.jpg" .Params.cover) }} 2880w" 
-                                alt="{{ .Title }}">
-                        </a>
-                    </div>
-    
-                    <div class="col s9 flow-text">
-                        <h5 class="truncate"><a href="{{ .Permalink }}">{{ .Title }}</a></h5>
-                        <h6 class="truncate">{{.Params.description}}</h6>
-                    </div>
-                </li>
-
-            {{ end }}
-        </ul>
-    </div>
+                <br/>
+                
+            </div>
+        {{ end }}
 
 </div>

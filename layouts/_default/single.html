@@ -37,6 +37,7 @@
       {{ partial "breadcrumb.html" . }}
     </div>
      
+    <!-- Single Post Content -->
     <div class="row">
       <div class="col s12 flow-text text-justify">
         {{ .Content }}
@@ -45,6 +46,7 @@
         
     {{ partial "prev-next.html" . }}
 
+    <!-- Related Posts -->
     <div class="row">
       <div class="col s12 related">
           <h3>Related:</h3>
@@ -54,14 +56,15 @@
             <p class="flow-text text-justify">
               <em>Some other posts if you enjoyed this one:</em>
             </p>
+      </div>
             {{ partial "featured" (.Site.RegularPages.Related . | first 6) }}
           {{ else }}
             <p class="flow-text text-justify">
               <em>Opps, there does not appear to be any related posts.</em>
             </p>
+      </div>
           {{ end }}
 
-        </div>
     </div>
 
     <div class="row">

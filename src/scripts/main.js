@@ -1,5 +1,7 @@
 $(document).ready(function() {
-    // SIDENAV
+    /**
+     * Initialise Side Navigation
+     */
     $('.button-collapse').sideNav({
         // Default is 300
         menuWidth: 250,
@@ -15,7 +17,15 @@ $(document).ready(function() {
         onClose: function(el) { },
     });
 
+    /**
+     * Initialise Image Material Box
+     */
     $('.materialboxed').materialbox();
+
+    /**
+     * Initialise Carousel
+     */
+    $('.carousel').carousel();
 
     /**
      * Add target="blank" to external links
