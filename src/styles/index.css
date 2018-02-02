@@ -1,5 +1,5 @@
 #index-header {
-    height: 95vh;
+    height: 90vh;
     width: 100%;
     background-size: cover; 
     background-position: top;
@@ -25,12 +25,7 @@
         display: inline-block;
         font-size: 1.8em;        
     }
-}
 
-div#it-code {
-    blockquote {
-        margin-left: 0px;
-    }
 }
 
 #index-featured {

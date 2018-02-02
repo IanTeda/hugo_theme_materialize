@@ -19,25 +19,25 @@
         </div>
     </div>
 
-    <div class="container list">
+    <div id="photos" class="container list">
         <div class="row">
 
                 <!-- List relevant pages -->
-                {{ range $.Site.Data.photos_list }}
-                    {{ $img := . }}
+                {{ range (.Paginator 18).Pages }}
 
-                    <div class="col s4">
+                    <div class="col s12 m6 l4">
                         <p>
                             <img 
                             class="z-depth-1 materialboxed"
-                            width="100%" 
-                            sizes="(max-width: 600px) 100vw, (max-width: 992px) 100vw, (max-width: 1200px) 100vw, (max-width: 2880px) 100vw" 
+                            sizes="(max-width: 600px) 100vw, (max-width: 992px) 30vw, (max-width: 1200px) 30vw, (max-width: 2880px) 30vw",
+                            width="100%",
+                            src="/photos/{{ index $.Site.Data.photos (printf "%s@mobile.jpg" .Params.image) }}" 
                             srcset="
-                                /photos/{{ index $.Site.Data.photos_hash ( printf "%s@mobile.jpg" $img )}} 600w,
-                                /photos/{{ index $.Site.Data.photos_hash ( printf "%s@tablet.jpg" $img )}} 992w,
-                                /photos/{{ index $.Site.Data.photos_hash ( printf "%s@desktop.jpg" $img )}} 1200w,
-                                /photos/{{ index $.Site.Data.photos_hash ( printf "%s@highres.jpg" $img )}} 2880w" 
-                            alt="{{ $img }}">
+                                /photos/{{ index $.Site.Data.photos (printf "%s@mobile.jpg" .Params.image) }} 600w,
+                                /photos/{{ index $.Site.Data.photos (printf "%s@tablet.jpg" .Params.image) }} 992w,
+                                /photos/{{ index $.Site.Data.photos (printf "%s@desktop.jpg" .Params.image) }} 1200w,
+                                /photos/{{ index $.Site.Data.photos (printf "%s@highres.jpg" .Params.image) }} 2880w" 
+                            alt="{{ .Title }}">
                         </p>
                     </div>
 
