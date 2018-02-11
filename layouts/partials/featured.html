@@ -1,26 +1,56 @@
 <div class="row featured">
 <!-- Featured posts, contex (posts to be featured) passed from parital block -->
 
+
         {{ range first 3 . }}
+
             <div class="col m4 s12">
-                <a href="{{ .Permalink }}">
-                    <img 
-                        class="z-depth-1 aspect-ration-32"
-                        width="100%" 
-                        sizes="(max-width: 600px) 100vw, (max-width: 992px) 30vw, (max-width: 1200px) 30vw, (max-width: 2880px) 30vw"
-                        src="/images/{{ index .Site.Data.images (printf "%s@mobile.jpg" .Params.cover) }}" 
-                        srcset="
-                            /images/{{ index .Site.Data.images (printf "%s@mobile.jpg" .Params.cover) }} 600w,
-                            /images/{{ index .Site.Data.images (printf "%s@tablet.jpg" .Params.cover) }} 992w,
-                            /images/{{ index .Site.Data.images (printf "%s@desktop.jpg" .Params.cover) }} 1200w,
-                            /images/{{ index .Site.Data.images (printf "%s@highres.jpg" .Params.cover) }} 2880w" 
-                        alt="{{ .Title }}">
+                <a href="/photos/">
+
+                        {{ if (isset .Params "photo") }}
+
+                        <img 
+                            class="z-depth-1 aspect-ration-32"
+                            width="100%" 
+                            sizes="(max-width: 600px) 100vw, (max-width: 992px) 30vw, (max-width: 1200px) 30vw, (max-width: 2880px) 30vw"
+                            src="/photos/{{ index .Site.Data.photos (printf "%s@mobile.jpg" .Params.photo) }}" 
+                            srcset="
+                                /photos/{{ index .Site.Data.photos (printf "%s@mobile.jpg" .Params.photo) }} 600w,
+                                /photos/{{ index .Site.Data.photos (printf "%s@tablet.jpg" .Params.photo) }} 992w,
+                                /photos/{{ index .Site.Data.photos (printf "%s@desktop.jpg" .Params.photo) }} 1200w,
+                                /photos/{{ index .Site.Data.photos (printf "%s@highres.jpg" .Params.photo) }} 2880w" 
+                            alt="{{ .Title }}">
+        
+        
+                        {{ else }}
+                        
+                            <img 
+                                class="z-depth-1 aspect-ration-32"
+                                width="100%" 
+                                sizes="(max-width: 600px) 100vw, (max-width: 992px) 30vw, (max-width: 1200px) 30vw, (max-width: 2880px) 30vw"
+                                src="/images/{{ index .Site.Data.images (printf "%s@mobile.jpg" .Params.cover) }}" 
+                                srcset="
+                                    /images/{{ index .Site.Data.images (printf "%s@mobile.jpg" .Params.cover) }} 600w,
+                                    /images/{{ index .Site.Data.images (printf "%s@tablet.jpg" .Params.cover) }} 992w,
+                                    /images/{{ index .Site.Data.images (printf "%s@desktop.jpg" .Params.cover) }} 1200w,
+                                    /images/{{ index .Site.Data.images (printf "%s@highres.jpg" .Params.cover) }} 2880w" 
+                                alt="{{ .Title }}">
+
+                        {{ end }}
+
+
+
+
                 </a>
                 
-                <div class="text-overlay">
-                    <h5><a href="{{ .Permalink }}">{{ .Title }}</a></h5>
-                    <p class="flow-text">{{.Params.description}}</p>
-                </div>
+                {{ if (not (isset .Params "photo")) }}
+
+                    <div class="text-overlay">
+                        <h5><a href="{{ .Permalink }}">{{ .Title }}</a></h5>
+                        <p class="flow-text">{{.Params.description}}</p>
+                    </div>
+
+                {{ end }}
 
                 <br/>
                 

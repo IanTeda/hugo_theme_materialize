@@ -57,7 +57,9 @@
               <em>Some other posts if you enjoyed this one:</em>
             </p>
       </div>
-            {{ partial "featured" (.Site.RegularPages.Related . | first 6) }}
+          
+        {{ partial "featured" (.Site.RegularPages.Related . | first 6) }}
+
           {{ else }}
             <p class="flow-text text-justify">
               <em>Opps, there does not appear to be any related posts.</em>
