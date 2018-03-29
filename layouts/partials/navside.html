@@ -3,15 +3,15 @@
         <div class="user-view center-align">
             <a href="/">
                 <img 
-                    class="circle z-depth-2"
-                    width="100%"
-                    sizes="(max-width: 600px) 20vw, (max-width: 992px) 20vw, (max-width: 1200px) 20vw, (max-width: 2880px) 20vw" 
-                    src="/photos/{{index $.Site.Data.photos "2010-09-15 08.06.03 111111_0000@mobile.jpg"}} "
+                    class="circle z-depth-2" 
+                    width="100%" 
+                    sizes="(max-width: 600px) 30vw, (max-width: 992px) 30vw, (max-width: 1200px) 30vw, (max-width: 2880px) 30vw"
+                    src="images/{{index $.Site.Data.images "head-shot@desktop.jpg"}}"
                     srcset="
-                        /photos/{{index $.Site.Data.photos "2010-09-15 08.06.03 111111_0000@mobile.jpg"}} 576w,
-                        /photos/{{index $.Site.Data.photos "2010-09-15 08.06.03 111111_0000@tablet.jpg"}} 768w,
-                        /photos/{{index $.Site.Data.photos "2010-09-15 08.06.03 111111_0000@desktop.jpg"}} 992w,
-                        /photos/{{index $.Site.Data.photos "2010-09-15 08.06.03 111111_0000@highres.jpg"}} 1200w"
+                        images/{{index $.Site.Data.images "head-shot@mobile.jpg"}} 600w,
+                        images/{{index $.Site.Data.images "head-shot@tablet.jpg"}} 992w,
+                        images/{{index $.Site.Data.images "head-shot@desktop.jpg"}} 1200w,
+                        images/{{index $.Site.Data.images "head-shot@highres.jpg"}} 2880w"
                     alt="Ian Teda head shot">
             </a>
             <a href="{{ $.Site.Params.now }}"><span class="white-text name">{{ .Site.Params.author }}</span></a>
